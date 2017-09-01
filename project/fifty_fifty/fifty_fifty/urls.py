@@ -34,8 +34,8 @@ urlpatterns = [
     url(r'^profile/profile.html', views.userProfileProfile, name='profileProfile'),
     url(r'^profile/menteelogin.html', views.userProfile, name='profile'),
     url(r'^profile/contact.html', views.userProfileContact, name='profileContact'),
-    
-    url(r'^accounts/password/reset', views.PasswordResetView.as_view(template_name='password_reset.html')),
+
+    url(r'^accounts/password/reset', PasswordResetView.as_view(template_name='password_reset.html')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^content/', include('content.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
@@ -43,4 +43,3 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    
