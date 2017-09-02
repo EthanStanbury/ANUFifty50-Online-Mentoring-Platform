@@ -1,4 +1,5 @@
-<!-- Code for a persistent navigation bar -->
+
+<!DOCTYPE html>
 
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -23,20 +24,20 @@
                     <a class="page-scroll" href="#contact">Contact Us</a>
                 </li>
                 <li>
-                  <!-- login -->
-                    {% if not request.user.is_authenticated %}
-                      <a class="page-scroll" href="{% url 'account_login' %}">Login</a>
-                    {% else %}
-                      <a class="page-scroll" href="{% url 'account_logout' %}">Logout</a>
-                    {% endif %}
-                </li>
-                <li>
-                  <!-- signup -->
+                  <!-- Sign Up -->
                     {% if not request.user.is_authenticated %}
                       <a class="page-scroll" href="{% url 'account_signup' %}">Sign Up</a>
                     {% else %}
                       <a class="page-scroll" href="{% url 'account_login' %}">Profile</a>
                     {% endif %}
+                </li>
+                <li>
+                  <!--     Login    -->
+                  {% if not request.user.is_authenticated %}
+                    <a class="page-scroll" href="{% url 'account_login' %}">Login</a>
+                  {% else %}
+                    <a class="page-scroll" href="{% url 'account_logout' %}">Sign Out</a>
+                  {% endif %}
                 </li>
             </ul>
         </div>
