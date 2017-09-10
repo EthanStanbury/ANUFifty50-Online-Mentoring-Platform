@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from content.models import Post, Mentee, Mentor, Training
+from blog.models import Post
 from webcore.models import Profile, Xpairs
+from django.utils import timezone
 #from content
 
 # Create your views here.
@@ -20,9 +22,16 @@ def userProfile(request):
 @login_required
 def userProfileNews(request):
     user = request.user
-    context = {'user':user}
-    template = 'news.html'
-    return render(request,template,context)
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    template = 'blog/post_list.html'
+    return render(request,template, {'posts': posts})
+
+## post_detail views the blog posts individually
+@login_required
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    template = 'blog/post_detail.html'
+    return render(request, template, {'post': post})
 
 
 @login_required
