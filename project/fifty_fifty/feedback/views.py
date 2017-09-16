@@ -32,7 +32,7 @@ def feedback_process(request):
                 data = messages.add_message(request, messages.ERROR,'An error occurred. {}'.format(str(ex)))
             else:
                 feedback_form = form.save(commit=False)
-                feedback_form.receiver_email = receiver_email
+                # feedback_form.receiver_email = receiver_email
                 feedback_form.user = User
                 feedback_form.save()
                 data = messages.add_message(request, messages.INFO, 'Thanks for sending a feedback.')

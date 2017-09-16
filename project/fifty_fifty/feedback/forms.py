@@ -15,8 +15,8 @@ class FeedbackForm(forms.ModelForm):
         super(FeedbackForm, self).__init__(*args, **kwargs)
 
         if self.user:
-            self.fields['first_name'].initial = self.user.username
-            self.fields['first_name'].widget.attrs['readonly'] = str(self.user.username) is not ''
+            self.fields['first_name'].initial = self.user.first_name
+            self.fields['first_name'].widget.attrs['readonly'] = str(self.user.first_name) is not ''
             self.fields['last_name'].initial = self.user.last_name
             self.fields['last_name'].widget.attrs['readonly'] = str(self.user.last_name) is not ''
 
