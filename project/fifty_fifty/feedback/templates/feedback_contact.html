@@ -105,41 +105,36 @@
         </nav>
 
         <div class="container form" style='padding-top:10%'>
+            {% if form %}
+                <h2 class="section-heading">Ask us questions / give us feedback!</h2>
 
-            <h2 class="section-heading">Ask us questions / give us feedback!</h2>
 
-            <!--   <form action="/action_page.php"> -->
-            <!--<form action="mailto:nikitabhatia.17@gmail.com" method="post" enctype="text/plain">-->
+                <form  action="{% url 'feedback:feedback_process' %}" method="POST" class="form-group">
+                    {% csrf_token %}
+                    {{ form.first_name.errors }}
+                    {{ form.first_name.label_tag }}
+                    {{ form.first_name }}
+                    {{ form.last_name.errors }}
+                    {{ form.last_name.label_tag }}
+                    {{ form.last_name }}
+                    {{ form.message.errors }}
+                    {{ form.message.label_tag }}
+                    {{ form.message }}
+                    <input type="submit" value="Submit" class="btn btn-primary btn-xl sr-button">
+                </form>
+            {% endif %}
 
-                <!--<label for="fname">First Name</label>-->
-                <!--<input type="text" id="fname" name="firstname" placeholder="Your name..">-->
-
-                <!--<label for="lname">Last Name</label>-->
-                <!--<input type="text" id="lname" name="lastname" placeholder="Your last name..">-->
-
-                <!--<label for="subject">Subject</label>-->
-                <!--<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>-->
-
-               <!--<input type="submit" value="Submit" class="btn btn-primary btn-xl sr-button">-->
-
-            <!--</form>-->
-            <!--<form action="" method="post">-->
-                <!--{% csrf_token %}-->
-                <!--{{ form.as_p }}-->
-            <!--</form>-->
-            <div class="form-group">
-                {{ form.first_name.errors }}
-                {{ form.first_name.label_tag }}
-                {{ form.first_name }}
-                {{ form.last_name.errors }}
-                {{ form.last_name.label_tag }}
-                {{ form.last_name }}
-                {{ form.subject.errors }}
-                {{ form.subject.label_tag }}
-                {{ form.subject }}
-                <input type="submit" value="Submit" class="btn btn-primary btn-xl sr-button">
-            </div>
-
+            {% if messages %}
+                <div class="row messages">
+                    {% for message in messages %}
+                    <div {% if message.tags %} class=" col-xs-12 text-center {{ message.tags }}" {% endif %}>
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}<h2 class="text-danger">ERROR</h2> {% endif %}
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}<h2 class="text-success">MESSAGE SENT</h2> {% endif %}
+                        <h3>{{ message }}</h3>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
         <footer class="contact-footer">
             <div style="text-align:center;">

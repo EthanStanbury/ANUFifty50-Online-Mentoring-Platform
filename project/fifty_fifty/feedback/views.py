@@ -1,33 +1,16 @@
-from django.contrib.auth.models import User
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
+
+from django.core.mail import send_mail, BadHeaderError
+from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
+from django.conf import settings
+
+from webcore.models import Profile
 from .forms import FeedbackForm
 from .models import Feedback_contact
-from webcore.models import Profile
-
-# #the function executes with the signup url to take the inputs
-# def feedback_process(request):
-#     contact_template = 'feedback_contact.html'
-#     # sucess_template = 'thanks.html'
-#
-#     if request.method == 'POST':  # if the form has been filled
-#
-#         form = Feedback_contact(request.POST)
-#
-#         # creating an feedback contact object containing all the data
-#         form = FeedbackForm(request.user)
-#         # It should return an HttpResponse.
-#         form.send_email()
-#         # saving all the data in the current object into the database
-#         form.save()
-#
-#     else:
-#         form = FeedbackForm()  # an unboundform
-#
-#     return render(request, contact_template, {'feedback_form': form})
 
 
 def feedback_process(request):
+    User = get_object_or_404(Profile, pk=request.user.pk)
     contact_template = 'feedback_contact.html'
     # sucess_template = 'thanks.html'
 
@@ -35,19 +18,30 @@ def feedback_process(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = FeedbackForm(request.POST)
+
         # check whether it's valid:
         if form.is_valid():
-            feedback_form = form.save(commit=False)
-            feedback_form.user = User.objects.get(user=request.user)  # use your own profile here
-            feedback_form.save()
-            # return HttpResponseRedirect(self.get_success_url())
-        # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/')
+            receiver_email = settings.EMAIL_HOST_USER
+            subject = form.subject(User.role)
+            message = form.cleaned_data['message']
+
+            # handle email eceptions
+            try:
+                send_mail(subject, message, request.user.email, [receiver_email])
+            except Exception as ex:
+                data = messages.add_message(request, messages.ERROR,'An error occurred. {}'.format(str(ex)))
+            else:
+                feedback_form = form.save(commit=False)
+                feedback_form.receiver_email = receiver_email
+                feedback_form.user = User
+                feedback_form.save()
+                data = messages.add_message(request, messages.INFO, 'Thanks for sending a feedback.')
+
+            # render thank you message
+            return  render(request, contact_template, {'message': data})
 
     # if a GET (or any other method) we'll create a blank form
     else:
-        form = FeedbackForm(request)
+        form = FeedbackForm(user=User.user)
 
     return render(request, contact_template, {'form': form})
