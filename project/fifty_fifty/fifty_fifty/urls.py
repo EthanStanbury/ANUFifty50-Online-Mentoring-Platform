@@ -18,6 +18,8 @@ from django.conf.urls.static import static
 from django.conf.urls import url, include
 from django.contrib import admin
 from webcore import views
+from allauth.account.views import PasswordResetView
+
 admin.autodiscover()
 
 urlpatterns = [
@@ -35,6 +37,7 @@ urlpatterns = [
     url(r'^profile/menteelogin.html', views.userProfile, name='profile'),
     url(r'^profile/contact.html', views.userProfileContact, name='profileContact'),
 
+    url(r'^accounts/password/reset', PasswordResetView.as_view(template_name='password_reset.html')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^content/', include('content.urls')),
     url(r'', include('blog.urls')),
