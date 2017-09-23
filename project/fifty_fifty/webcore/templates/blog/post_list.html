@@ -83,7 +83,7 @@
                 <!-- Blog Posts -->
                 {% for post in posts %}
                 <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                <p class="lead">by [insert user here]</p>
+                <p class="lead">by {{ post.author }}</p>
                 <p><span class="glyphicon glyphicon-time"></span>{{ post.published_date }}</p>
                 <hr>
                   <img class="img-responsive" src="http://placehold.it/900x300" alt="">
