@@ -86,7 +86,7 @@
                 <p class="lead">by {{ post.author }}</p>
                 <p><span class="glyphicon glyphicon-time"></span>{{ post.published_date }}</p>
                 <hr>
-                  <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                  <img src="{{ post.image.url }}" alt="img" width=750px height=500px>
                 <hr>
                 <p>{{ post.text|linebreaksbr }}</p>
                 <a class="btn btn-primary" href="{% url 'post_detail' pk=post.pk %}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
