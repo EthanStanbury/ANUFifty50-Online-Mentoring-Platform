@@ -6,7 +6,7 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
-    image = models.ImageField(upload_to='blog_images', null=True)
+    image = models.ImageField(upload_to='blog_images', default="blog_images/stock_photo.jpg")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
