@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca03b440-7c18-4fbb-b8da-3a62b745748e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/fifty_fifty/webcore/templates/FAQ.html" afterPath="$PROJECT_DIR$/project/fifty_fifty/webcore/templates/FAQ.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/fifty_fifty/webcore/templates/account/login.html" afterPath="$PROJECT_DIR$/project/fifty_fifty/webcore/templates/account/login.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,17 +29,105 @@
             <state relative-caret-position="3105">
               <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="219" selection-end-column="68" />
               <folding>
-                <marker date="1505222666000" expanded="true" signature="7313:8017" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="1639:1658" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="1953:2736" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="1985:2721" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="2023:2042" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="2043:2706" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="2095:2687" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="2152:2162" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="2459:2470" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="2618:2629" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="2782:5927" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="2818:3093" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="2852:3074" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="2908:3051" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="3129:5908" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="3181:3332" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="3374:3394" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="3395:5703" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="3459:3966" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="3509:3939" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="3622:3797" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="4030:4550" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="4080:4523" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="4193:4371" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="4614:5128" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="4664:5101" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="4777:4960" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="5192:5680" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="5242:5653" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="5355:5526" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="5755:5889" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="5976:8886" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="6014:8871" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="6083:6121" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="6122:6319" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="6359:8856" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="6407:7172" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="6491:7149" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="6679:7124" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="6751:7093" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="6825:6908" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="6967:7058" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="7220:8016" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="7312:8016" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="7335:7993" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="7525:7968" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="7597:7937" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="7671:7754" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="7813:7902" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="8064:8837" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="8144:8814" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="8338:8789" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="8410:8758" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="8484:8567" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="8626:8723" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="8927:8940" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="8998:9499" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="9030:9484" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="9060:9469" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="9135:9155" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="9156:9450" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="9213:9224" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="9543:10637" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="9575:10622" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="9605:10607" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="9680:9700" ph="..." />
+                <marker date="1506228915000" expanded="true" signature="9701:10588" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="9985:10003" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="10141:10159" ph="..." />
+                <marker date="1506228915000" expanded="false" signature="10310:10328" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FAQ.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FAQ.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/fifty_fifty/webcore/templates/FAQ.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="248">
               <caret line="21" column="109" lean-forward="false" selection-start-line="21" selection-start-column="109" selection-end-line="21" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/fifty_fifty/webcore/templates/account/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="14" column="64" lean-forward="false" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/fifty_fifty/webcore/templates/account/signup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="14" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -61,6 +148,7 @@
         <option value="$PROJECT_DIR$/project/fifty_fifty/webcore/templates/Default_NavBar.html" />
         <option value="$PROJECT_DIR$/project/fifty_fifty/webcore/templates/profile_navbar.html" />
         <option value="$PROJECT_DIR$/project/fifty_fifty/webcore/templates/FAQ.html" />
+        <option value="$PROJECT_DIR$/project/fifty_fifty/webcore/templates/account/login.html" />
       </list>
     </option>
   </component>
@@ -252,13 +340,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project/fifty_fifty/webcore/migrations/0002_auto_20170427_1604.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/fifty_fifty/webcore/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -719,14 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/fifty_fifty/webcore/templates/account/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/fifty_fifty/webcore/templates/Default_NavBar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -748,7 +821,75 @@
         <state relative-caret-position="3105">
           <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="219" selection-end-column="68" />
           <folding>
-            <marker date="1505222666000" expanded="true" signature="7313:8017" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="1639:1658" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="1953:2736" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="1985:2721" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="2023:2042" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="2043:2706" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="2095:2687" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="2152:2162" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="2459:2470" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="2618:2629" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="2782:5927" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="2818:3093" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="2852:3074" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="2908:3051" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="3129:5908" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="3181:3332" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="3374:3394" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="3395:5703" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="3459:3966" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="3509:3939" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="3622:3797" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="4030:4550" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="4080:4523" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="4193:4371" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="4614:5128" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="4664:5101" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="4777:4960" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="5192:5680" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="5242:5653" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="5355:5526" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="5755:5889" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="5976:8886" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="6014:8871" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="6083:6121" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="6122:6319" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="6359:8856" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="6407:7172" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="6491:7149" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="6679:7124" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="6751:7093" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="6825:6908" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="6967:7058" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="7220:8016" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="7312:8016" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="7335:7993" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="7525:7968" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="7597:7937" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="7671:7754" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="7813:7902" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="8064:8837" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="8144:8814" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="8338:8789" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="8410:8758" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="8484:8567" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="8626:8723" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="8927:8940" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="8998:9499" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="9030:9484" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="9060:9469" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="9135:9155" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="9156:9450" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="9213:9224" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="9543:10637" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="9575:10622" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="9605:10607" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="9680:9700" ph="..." />
+            <marker date="1506228915000" expanded="true" signature="9701:10588" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="9985:10003" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="10141:10159" ph="..." />
+            <marker date="1506228915000" expanded="false" signature="10310:10328" ph="..." />
           </folding>
         </state>
       </provider>
@@ -757,6 +898,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="21" column="109" lean-forward="false" selection-start-line="21" selection-start-column="109" selection-end-line="21" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/fifty_fifty/webcore/templates/account/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="14" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/fifty_fifty/webcore/templates/account/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="14" column="64" lean-forward="false" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
           <folding />
         </state>
       </provider>
