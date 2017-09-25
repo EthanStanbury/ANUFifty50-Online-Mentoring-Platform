@@ -27,7 +27,9 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^profile/$', views.userProfile, name='profile'),
     url(r'^profile/content.html', views.userProfileContent, name='profileContent'),
-    url(r'^profile/news.html', views.userProfileNews, name='profileNews'),
+    url(r'^profile/blog/post_list.html', views.userProfileNews, name='profileNews'),
+    #url(r'^profile/news.html', views.userProfileNews, name='profileNews'),
+    url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
     url(r'^profile/mentor.html', views.userProfileMentor, name='profileMentor'),
     url(r'^profile/resources.html', views.userProfileResources, name='profileResources'),
     url(r'^profile/FAQ.html', views.userProfileFAQ, name='profileFAQ'),
@@ -41,6 +43,7 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
     url(r'^content/', include('content.urls')),
     url(r'^feedback/', include('feedback.urls')),
+    url(r'', include('blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

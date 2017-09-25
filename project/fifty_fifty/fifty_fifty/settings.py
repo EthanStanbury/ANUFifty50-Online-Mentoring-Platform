@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'content',
     'debug_toolbar',
     'pair',
-    'feedback'
+    'feedback',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -129,7 +130,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Australia/ACT'
 
 USE_I18N = True
 
