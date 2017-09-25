@@ -11,6 +11,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('webcore', '0027_auto_20170902_1618')
     ]
 
     operations = [
