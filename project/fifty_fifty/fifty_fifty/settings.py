@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'content',
     'debug_toolbar',
     'pair',
-    'feedback'
+    'feedback',
     'blog',
 ]
 
