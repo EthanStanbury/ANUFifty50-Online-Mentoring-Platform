@@ -1,0 +1,140 @@
+{% load staticfiles %}
+{% include 'Profile_NavBar.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href={% static "MenteePage/img/logo.png" %}>
+        <meta charset="UTF-8">
+      	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+      	<link rel="stylesheet" href={% static "MenteePage/css/reset.css" %}> <!-- CSS reset -->
+      	<link rel="stylesheet" href={% static "MenteePage/css/style.css" %}> <!-- Resource style -->
+      	<!-- <script src={% static "MenteePage/js/modernizr.js" %}></script>  Modernizr This broke the navbar-->
+        <title>Fifty50 Mentoring Program</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href={% static "MenteePage/vendor/bootstrap/css/bootstrap.min.css" %} rel="stylesheet" type="text/css">
+
+        <!-- Custom Fonts -->
+        <link href={% static "MenteePage/vendor/font-awesome/css/font-awesome.min.css" %} rel="stylesheet" type="text/css">
+        <!-- Plugin CSS -->
+        <link href={% static "MenteePage/vendor/magnific-popup/magnific-popup.css" %} rel="stylesheet" type="text/css">
+
+        <!-- Theme CSS -->
+        <link href={% static "MenteePage/css/creative.min.css" %} rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+        <![endif]-->
+
+        <style type="text/css">
+            @media screen and (min-width: 768px) and (max-width: 1034px) {
+                body {
+                    padding-top: 100px;
+                }
+            }
+            @media screen and (min-width: 1035px) and (max-width: 1233px) {
+                body {
+                    padding-top: 50px;
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+      <section class="no-padding" id="settings">
+          <div class="container-fluid">
+            <div class="col-lg-8 col-lg-offset-2 text-center" style="padding-top:100px;">
+                <h2 class="section-heading">Settings</h2>
+                <hr>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2" style="padding-bottom:15px;">
+
+
+                <!-- using a default form template. Convert to Django later -->
+                <!-- should just use a modified version of the registration form -->
+                <form>
+                  <p class="text-muted">First name is <span style="color:black">"fname"</span>. Change to:</p>
+                  <input type="text" name="firstname"><br>
+                  <p class="text-muted">Last name is <span style="color:black">"lname"</span>. Change to:</p>
+                  <input type="text" name="lastname">
+                  <p class="text-muted">Gender is <span style="color:black">"gender"</span>. Change to:</p>
+                  <input type="text" name="gender">
+                  <p class="text-muted">Year of study is <span style="color:black">"N-th"</span>. Change to:</p>
+                  <input type="text" name="yearofstudy">
+                  <p class="text-muted">Degree is <span style="color:black">"degree"</span>. Change to:</p>
+                  <input type="text" name="degree">
+                  <p class="text-muted">Preferred subject area is <span style="color:black">"subject"</span>. Change to:</p>
+                  <input type="text" name="subject">
+                  {% if request.user.profile.role == 'Mentor' %}
+                    <p class="text-muted">Preferred mentee gender<span style="color:black">"menteegender"</span>. Change to:</p>
+                    <input type="text" name="pref_mentee_gender">
+                    <p class="text-muted">Max number of mentees is <span style="color:black">"maxmentees"</span>. Change to:</p>
+                    <input type="text" name="num_mentees">
+                  {% else %}
+                    <p class="text-muted">Preferred mentor gender is <span style="color:black">"mentorgender"</span>. Change to:</p>
+                    <input type="text" name="pref_mentor_gender">
+                  {% endif %}
+                </form>
+                <!-- -->
+
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                  <a href="#" class="btn btn-primary btn-xl sr-button">Make these changes!</a>
+                    <!-- have prompt "are you sure?" with a list of the changes made underneath. !-->
+                </div>
+
+
+            </div>
+          </div>
+      </section>
+      <section class="no-padding" style="padding:50px;"></section>
+
+
+</section>
+
+    <footer class="contact-footer">
+        <div style="text-align:center;">
+            <span style="color:white;">Contact Us:</span>
+            <div style="padding-right:15px;"></div>
+            <a href="https://www.instagram.com/anu_fifty50/" style="margin-right:15px;"><i class="fa fa-lg fa-instagram text-primary sr-contact"></i></a>
+            <a href="contact.html" style="margin-right:15px;"><i class="fa fa-lg fa-envelope-o text-primary sr-contact"></i></a>
+            <a href="https://www.facebook.com/ANUFifty50STEM/" style="margin-right:15px;"><i class="fa fa-lg fa-facebook-official text-primary sr-contact"></i></a>
+            <a href="https://twitter.com/anu_Fifty50"><i class="fa fa-lg fa-twitter text-primary sr-contact"></i></a>   <!-- added fa-twitter icon -->
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src={% static "MenteePage/vendor/jquery/jquery.min.js" %}></script>
+
+    <!-- Theme JavaScript -->
+    <script src={% static "MenteePage/js/creative.min.js" %}></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src={% static "MenteePage/vendor/bootstrap/js/bootstrap.min.js" %}></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src={% static "MenteePage/vendor/scrollreveal/scrollreveal.min.js" %}></script>
+    <script src={% static "MenteePage/vendor/magnific-popup/jquery.magnific-popup.min.js" %}></script>
+
+    <script src={% static "MenteePage/js/jquery-2.1.1.js" %}></script>
+    <script src={% static "MenteePage/js/jquery.mobile.custom.min.js" %}></script>
+    <script src={% static "MenteePage/js/main.js" %}></script> <!-- Resource jQuery -->
+
+</body>
+</html>
+{% endblock %}
