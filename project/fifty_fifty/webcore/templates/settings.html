@@ -56,18 +56,52 @@
 
     </head>
     <body>
+      <section class="no-padding" id="settings">
+          <div class="container-fluid">
+            <div class="col-lg-8 col-lg-offset-2 text-center" style="padding-top:100px;">
+                <h2 class="section-heading">Settings</h2>
+                <hr>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2" style="padding-bottom:15px;">
 
-<section class="cd-faq">
-	<!-- <ul class="cd-faq-categories">
-		<li><a class="selected" href="#basics">Basics</a></li>
-		<li><a href="#mobile">Mobile</a></li>
-		<li><a href="#account">Account</a></li>
-		<li><a href="#payments">Payments</a></li>
-		<li><a href="#privacy">Privacy</a></li>
-		<li><a href="#delivery">Delivery</a></li>
-	</ul> <!-- cd-faq-categories -->
 
-  <h1 class="section-heading">Settings</h1>
+                <!-- using a default form template. Convert to Django later -->
+                <!-- should just use a modified version of the registration form -->
+                <form>
+                  <p class="text-muted">First name is <span style="color:black">"fname"</span>. Change to:</p>
+                  <input type="text" name="firstname"><br>
+                  <p class="text-muted">Last name is <span style="color:black">"lname"</span>. Change to:</p>
+                  <input type="text" name="lastname">
+                  <p class="text-muted">Gender is <span style="color:black">"gender"</span>. Change to:</p>
+                  <input type="text" name="gender">
+                  <p class="text-muted">Year of study is <span style="color:black">"N-th"</span>. Change to:</p>
+                  <input type="text" name="yearofstudy">
+                  <p class="text-muted">Degree is <span style="color:black">"degree"</span>. Change to:</p>
+                  <input type="text" name="degree">
+                  <p class="text-muted">Preferred subject area is <span style="color:black">"subject"</span>. Change to:</p>
+                  <input type="text" name="subject">
+                  {% if request.user.profile.role == 'Mentor' %}
+                    <p class="text-muted">Preferred mentee gender<span style="color:black">"menteegender"</span>. Change to:</p>
+                    <input type="text" name="pref_mentee_gender">
+                    <p class="text-muted">Max number of mentees is <span style="color:black">"maxmentees"</span>. Change to:</p>
+                    <input type="text" name="num_mentees">
+                  {% else %}
+                    <p class="text-muted">Preferred mentor gender is <span style="color:black">"mentorgender"</span>. Change to:</p>
+                    <input type="text" name="pref_mentor_gender">
+                  {% endif %}
+                </form>
+                <!-- -->
+
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                  <a href="#" class="btn btn-primary btn-xl sr-button">Make these changes!</a>
+                    <!-- have prompt "are you sure?" with a list of the changes made underneath. !-->
+                </div>
+
+
+            </div>
+          </div>
+      </section>
+      <section class="no-padding" style="padding:50px;"></section>
 
 
 </section>
