@@ -137,6 +137,7 @@
                     {{ form.message.label_tag }}
                     {{ form.message }}
                     <input type="submit" value="Submit" class="btn btn-primary btn-xl sr-button">
+                    <div id="submission_confirmed" style="display:none;">Thank you! Your response has been recorded.</div>
                 </form>
             {% endif %}
 <!-- THIS OUTLINES WHO'S LOGGED IN AND OUT AND shouldnt be happening..... Needs to only show if email was sent or not.....
@@ -164,6 +165,12 @@
                 <a href="https://twitter.com/anu_Fifty50"><i class="fa fa-lg fa-twitter text-primary sr-contact"></i></a>   <!-- added fa-twitter icon -->
             </div>
         </footer>
+
+        <script>
+          function showDiv() {
+             document.getElementById('submission_confirmed').style.display = "block";
+          }
+        </script>
 
         <!-- jQuery -->
         <script src={% static "MenteePage/vendor/jquery/jquery.min.js" %}></script>
