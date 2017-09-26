@@ -36,7 +36,7 @@ urlpatterns = [
     url(r'^profile/profile.html', views.userProfileProfile, name='profileProfile'),
     url(r'^profile/menteelogin.html', views.userProfile, name='profile'),
     url(r'^profile/feedback/feedback_contact.html', views.feedback_process, name='feedback_process'),
-
+    url(r'^profile/settings.html', views.userProfileSettings, name='profileSettings'),
     #url(r'^profile/contact', include('feedback.urls')),
 
     url(r'^accounts/password/reset', PasswordResetView.as_view(template_name='password_reset.html')),

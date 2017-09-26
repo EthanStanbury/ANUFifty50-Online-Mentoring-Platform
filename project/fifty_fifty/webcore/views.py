@@ -74,6 +74,13 @@ def userProfileContent(request):
     return render(request,template,context)
 
 @login_required
+def userProfileSettings(request):
+    user = request.user
+    context = {'user':user}
+    template = 'settings.html'
+    return render(request,template,context)
+
+@login_required
 def feedback_process(request):
     User = get_object_or_404(Profile, pk=request.user.pk)
     contact_template = 'feedback/feedback_contact.html'
