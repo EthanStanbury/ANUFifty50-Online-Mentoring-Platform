@@ -56,28 +56,68 @@
         </style>
     </head>
     <body>
+      <section id="weeklycontent" style="padding-bottom:40px;">
+      		<div class="container" style="text-align:center;">
+      				<div class="row" style="margin-bottom:20px;">
+      						<div class="col-sm-6" style="text-align:justify; padding-right:40px;">
+                    <div class="jumbotron">
+                      <a href="settings.html">Edit</a>
+                                <div class="container" style="border-bottom:1px solid black; text-align:center">
+                                  <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png"
+                                            alt="stack photo" class="img profile-img" style="max-width:150px">
+                                  <h2>{{user.first_name}}&nbsp;{{user.last_name}}</h2>
+                                </div>
+                                <hr>
+                                <ul class="container details">
+                                    <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+91 90000 00000</p></li>
+                                    <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>somerandom@email.com</p></li>
+                                    <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Hyderabad</p></li>
+                                    <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="#">www.example.com</p></a>
+                                </ul>
+                    </div>
+                  </div>
+      						<div class="col-sm-6" style="padding-left:40px;">
+                    <div class="row">
+                          <div class="row">
+                              <h1>How amazing was your week?</h1>
+                              <hr>
+                              <h4>Did you meet up with your mentee/mentor?</h4>
+                              <div class="btn-group">
+                                  <button type="button" class="btn btn-default">No</button>
+                                  <button type="button" class="btn btn-default">Online</button>
+                                  <button type="button" class="btn btn-default">In Person</button>
+                              </div>
+                          </div>
+                          <div class="col-sm-12 text-center">
 
-        <div class="container" style="position:relative; margin-top:10%;">
-            <div class="jumbotron">
-                <div class="row">
-                    <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-                        <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" alt="stack photo" class="img profile-img">
+                              <div class="container" style="width:100%; text-align:center;">
+                                  <h4>How would you rate Fifty50 so far?</h4>
+                                  <div class="row lead evaluation">
+                                      <div id="colorstar" class="starrr ratable badForm"></div>
+                                      <span id="count">0</span> star(s) -
+                                      <span id="meaning"> </span>
+                                      <div class='indicators' style="display:none">
+                                          <div id='textwr'>What went wrong?</div>
+                                          <input id="rate[]" name="rate[]" type="text" placeholder="" class="form-control input-md" style="display:none;">
+                                          <input id="rating[]" name="rating[]" type="text" placeholder="" class="form-control input-md rateval" style="display:none;">
+                                          <span class="button-checkbox"><button type="button" class="btn criteria" data-color="info">Useful</button><input type="checkbox" class="hidden" /></span>
+                                          <span class="button-checkbox"><button type="button" class="btn criteria" data-color="info">Interesting</button><input type="checkbox" class="hidden" /></span>
+                                          <span class="button-checkbox"><button type="button" class="btn criteria" data-color="info">Accessible</button><input type="checkbox" class="hidden" /></span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <h4>Would you like to provide any more feedback?</h4>
+                          <input type="text" style="font-size:12px;" placeholder="e.g. I really enjoyed..... / The program can be improved by....."/>
+                          <div class="row" style="margin-bottom: 35px;">
+                              <a href="mailto:nikitabhatia.17@gmail.com" class="btn btn-primary btn-xl sr-button">Submit</a>
+                          </div>
                     </div>
-                    <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
-                        <div class="container" style="border-bottom:1px solid black">
-                            <h2>{{user.first_name}}&nbsp;{{user.last_name}}</h2>
-                        </div>
-                        <hr>
-                        <ul class="container details">
-                            <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+91 90000 00000</p></li>
-                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>somerandom@email.com</p></li>
-                            <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Hyderabad</p></li>
-                            <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="#">www.example.com</p></a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+                  </div>
+      				</div>
+      		</div>
+      </section>
+
 
         <footer class="contact-footer">
             <div style="text-align:center;">
