@@ -90,10 +90,10 @@
 					<h2 class="section-heading">... on Twitter!</h2>
 					<a class="twitter-timeline" href="https://twitter.com/anu_Fifty50" data-width="500" data-height="600">Latest tweets from ANU Fifty50!</a>
 			</div>
-			<div class="col-sm-6" style="padding: 10px 10px 10px 10px">
+			<div class="col-sm-6" id="facebook_feed" style="padding: 10px 10px 10px 10px">
 				<!-- Facebook feed -->
 				<h2 class="section-heading">... on Facebook!</h2>
-				<div class="fb-page" data-href="https://www.facebook.com/ANUFifty50STEM/" data-tabs="timeline" data-width="500" data-height="600" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ANUFifty50STEM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ANUFifty50STEM/">ANU Fifty50</a></blockquote></div>
+				<div id="feed" class="fb-page" data-href="https://www.facebook.com/ANUFifty50STEM/" data-tabs="timeline" data-width="500" data-height="600" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ANUFifty50STEM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ANUFifty50STEM/">ANU Fifty50</a></blockquote></div>
 			</div>
 	</div>
 
@@ -110,8 +110,19 @@
 			</div>
 		</footer>
 
+		<script>
+			$(document).ready(function(){
+				$(window).resize(function() {
+					$('#feed').attr('data-width', $('#facebook_feed').width());
+				});
+			});
+			$('#feed').redraw();
+		</script>
+
 		<!-- jQuery -->
 		<script src={% static "MenteePage/vendor/jquery/jquery.min.js" %}></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
 		<!-- Theme JavaScript -->
 		<script src={% static "MenteePage/js/creative.min.js" %}></script>
