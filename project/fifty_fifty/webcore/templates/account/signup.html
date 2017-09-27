@@ -37,22 +37,22 @@
         {{ form.degree_major|as_crispy_field }}
         {{ form.gender|as_crispy_field }}
         {{ form.mentor_gender|as_crispy_field }}
-      </div>
-      <div id="ifYes" style="display:none"  class="col-md-4 col-md-offset-4">
-        {{ form.why_mentor|as_crispy_field }}
-        {{ form.why_div_equ_inc|as_crispy_field }}
-        {{ form.mentee_number|as_crispy_field }}
-        {{ form.hear_about|as_crispy_field }}
-      </div>
-      <div class="col-md-4 col-md-offset-4">
-        {{ form.email|as_crispy_field }}
-        {{ form.password1|as_crispy_field }}
-        {{ form.password2|as_crispy_field }}
+    </div>
+    <div id="ifYes" style="display:none"  class="col-md-4 col-md-offset-4">
+      {{ form.why_mentor|as_crispy_field }}
+      {{ form.why_div_equ_inc|as_crispy_field }}
+      {{ form.mentee_number|as_crispy_field }}
+      {{ form.hear_about|as_crispy_field }}
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+      {{ form.email|as_crispy_field }}
+      {{ form.password1|as_crispy_field }}
+      {{ form.password2|as_crispy_field }}
 
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <button type="submit" class="btn btn-primary btn-xl sr-button">{% trans "Sign Up" %} &raquo;</button>
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <button type="submit" class="btn btn-primary btn-xl sr-button">{% trans "Sign Up" %} &raquo;</button>
       </form>
     </div>
   </div>
