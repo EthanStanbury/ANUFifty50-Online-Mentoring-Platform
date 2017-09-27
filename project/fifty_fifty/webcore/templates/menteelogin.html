@@ -21,7 +21,7 @@
 
 		<!-- Custom Fonts -->
 		<link href={% static "MenteePage/vendor/font-awesome/css/font-awesome.min.css" %} rel="stylesheet" type="text/css">
-		
+
 		<!-- Plugin CSS -->
 		<link href={% static "MenteePage/vendor/magnific-popup/magnific-popup.css" %} rel="stylesheet">
 
@@ -52,16 +52,16 @@
 	</head>
 		<body>
 
-			<!-- for Facebook embedded stream -->
-			<div id="fb-root"></div>
-				<script>(function(d, s, id) {
-				  var js, fjs = d.getElementsByTagName(s)[0];
-				  if (d.getElementById(id)) return;
-				  js = d.createElement(s); js.id = id;
-				  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
-				  fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));</script>
-			<!-- -->
+		<!-- for Facebook embedded stream -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
 
 <section id="weeklycontent" style="padding-bottom:40px;">
 		<div class="container" style="text-align:center;">
@@ -81,21 +81,33 @@
 </section>
 
 <section class="bg-primary" style="padding-bottom:200px; padding-left: 100px; padding-right: 100px; max-height:	1750px">
-	<div class="container" style="text-align:center;">
-		<h2 class="section-heading">Catch up with us...</h2>
-		<hr>
+		<div class="container" style="text-align:center;">
+			<h2 class="section-heading">Catch up with us...</h2>
+			<hr>
 
-		<div class="row" style="margin-bottom:20px;">
-			<div class="col-sm-6" style="padding: 10px 10px 10px 10px">
-				<!-- Twitter feed -->
-					<h2 class="section-heading">... on Twitter!</h2>
-					<a class="twitter-timeline" href="https://twitter.com/anu_Fifty50" data-width="500" data-height="600">Latest tweets from ANU Fifty50!</a>
-			</div>
-			<div class="col-sm-6" id="facebook_feed" style="padding: 10px 10px 10px 10px">
-				<!-- Facebook feed -->
-				<h2 class="section-heading">... on Facebook!</h2>
-				<div id="feed" class="fb-page" data-href="https://www.facebook.com/ANUFifty50STEM/" data-tabs="timeline" data-width="500" data-height="600" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ANUFifty50STEM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ANUFifty50STEM/">ANU Fifty50</a></blockquote></div>
-			</div>
+			<div class="row" style="margin-bottom:20px; margin-right:100px">
+				<div class="col-sm-6" style="padding: 10px 10px 10px 10px">
+					<!-- Twitter feed -->
+						<h2 class="section-heading">... on Twitter!</h2>
+						<a class="twitter-timeline" href="https://twitter.com/anu_Fifty50" data-width="500" data-height="600">Latest tweets from ANU Fifty50!</a>
+				</div>
+
+				<div class="col-sm-6" id="facebook_feed" style="padding: 10px 10px 10px 10px">
+					<!-- Facebook feed -->
+					<h2 class="section-heading">... on Facebook!</h2>
+				<!--	<div class="fb-page" data-href="https://www.facebook.com/ANUFifty50STEM/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+						<blockquote cite="https://www.facebook.com/ANUFifty50STEM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ANUFifty50STEM/">ANU Fifty50</a>
+						</blockquote>
+					-->
+					<div class="fb-page" data-href="https://www.facebook.com/ANUFifty50STEM/" data-tabs="timeline" data-width="500" data-height="600" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
+						<blockquote cite="https://www.facebook.com/ANUFifty50STEM/" class="fb-xfbml-parse-ignore">
+							<a href="https://www.facebook.com/ANUFifty50STEM/">ANU Fifty50</a>
+						</blockquote>
+					</div>
+					</div>
+				</div>
+
+		</div>
 	</div>
 
 </section><!-- End section -->
@@ -113,17 +125,24 @@
 
 		<script>
 			$(document).ready(function(){
-				$(window).resize(function() {
-					$('#feed').attr('data-width', $('#facebook_feed').width());
-				});
+			//$(window).resize(function() {
+			//		$('#feed').attr('data-width', $('#facebook_feed').width());
+			//	});
+		  var newwidth = $(window).width() - 250;
+		  $('#feed').css({width: newwidth+'px'});
 			});
-			$('#feed').redraw();
+			$(window).resize(function() {
+				var newwidth = $(window).width() - 250;
+				$('#feed').css({width: newwidth+'px'});
+				$('#feed').redraw();
+			});
 		</script>
+
+
 
 		<!-- jQuery -->
 		<script src={% static "MenteePage/vendor/jquery/jquery.min.js" %}></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 
 		<!-- Bootstrap Core JavaScript -->
 		<script src={% static "MenteePage/vendor/bootstrap/js/bootstrap.min.js" %}></script>
