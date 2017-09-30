@@ -54,7 +54,6 @@ STEM_DEGREE_PROGRAMME = (
     ('ASENG','Software Engineering (Honours)'),
     ('ESCIE','Diploma of Science'),
     ('ECOMP','Diploma of Computing'),
-    ()
 )
 
 # This will be used in case someone is doing a double degree
