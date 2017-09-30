@@ -53,7 +53,8 @@ STEM_DEGREE_PROGRAMME = (
     ('HSPSY','Science (Psychology) (Honours)'),
     ('ASENG','Software Engineering (Honours)'),
     ('ESCIE','Diploma of Science'),
-    ('ECOMP','Diploma of Computing')
+    ('ECOMP','Diploma of Computing'),
+    ()
 )
 
 # This will be used in case someone is doing a double degree
@@ -127,7 +128,7 @@ class Profile(models.Model):
     study_year = models.CharField(max_length=100,choices=YEAR_OF_STUDY, blank=False)
     degree_programme = models.CharField(max_length=50, null = True ,blank=False,choices=STEM_DEGREE_PROGRAMME)
     degree_programme_2 = models.CharField(max_length=50, null = True ,choices=DEGREE_PROGRAMME_2)
-    degree_major = models.CharField(max_length=15, null = True)
+    degree_major = models.CharField(max_length=50, null = True)
     gender = models.CharField(max_length=15, null = True ,choices=GENDER)
     mentor_gender = models.CharField(max_length=15, null = True ,choices=MENTOR_GENDER)
     why_mentor = models.CharField(max_length=150, null = True)
@@ -152,8 +153,6 @@ class Xpairs(models.Model):
 
     def __str__(self):
        return str(self.mentee) +" -> "+ str(self.mentor)
-
-
 
 def transfer(tee,tor):
     menteeId = tee.split(' ', 1)[1]
