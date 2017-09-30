@@ -13,21 +13,34 @@ class Pair(models.Model):
 
 
     def save(self, *args, **kwargs): ## Overiding the save function of Pair
-        self.name = str(self.mentee) +" -> "+ str(self.mentor)  ## Changing name of pair as mentee -> mentor
-        self.shortcode = transfer(str(self.mentee),str(self.mentor)) ## trimming mentee and mentor, and transfering them to Profile.paired_with
-        super(Pair, self).save(*args, **kwargs)
+        if(check(str(self.mentor))==True):
+            self.shortcode = transfer(str(self.mentee),str(self.mentor)) ## trimming mentee and mentor, and transfering them to Profile.paired_with
+            self.name = str(self.mentee) +" -> "+ str(self.mentor)  ## Changing name of pair as mentee -> mentor
+            super(Pair, self).save(*args, **kwargs)
+        else:
+            return
 
     def __str__(self):
         return str(self.mentee) +" -> "+ str(self.mentor)
 
-def transfer(tee,tor):
-    menteeId = tee.split(' ', 1)[1]
-    mentorId = tor.split(' ', 1)[1]
+def transfer(mentee,mentor):
+    menteeId = mentee.split(' ', 1)[1]
+    mentorId = mentor.split(' ', 1)[1]
     print(Profile.objects.all())
-    Profile.objects.filter(uniId__contains=menteeId).update(paired_with=mentorId)
-    Profile.objects.filter(uniId__contains=mentorId).update(paired_with=menteeId, mentee_number = 1)
-
-    x = Profile.objects.filter(uniId__contains=mentorId).get(mentee_number)
+    x = Profile.objects.filter(uniId__contains=mentorId).values_list('mentee_number',flat=True)[0]
     print(x)
+    Profile.objects.filter(uniId__contains=menteeId).update(paired_with=mentorId)
+    Profile.objects.filter(uniId__contains=mentorId).update(paired_with=menteeId,mentee_number = x-1)
+
+
+
+def check(mentor):
+    mentorId = mentor.split(' ', 1)[1]
+    x = Profile.objects.filter(uniId__contains=mentorId).values_list('mentee_number',flat=True)[0]
+    if (x==0):
+        return False
+    else:
+        return True
+
 class Meta:
     db_table = "pair"
