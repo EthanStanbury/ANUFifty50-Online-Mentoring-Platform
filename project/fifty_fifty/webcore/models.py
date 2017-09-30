@@ -15,6 +15,11 @@ YEAR_OF_STUDY = (
     ('5+','5+'),
 )
 
+UNIVERSITY = (
+    ('','-'),
+    ('ANU', 'The Australian National University'),
+)
+
 BACHELOR_DEGREE_PROGRAMME = (
     ('','-'),
     ('AACOM','Advanced Computing (Honours)'),
@@ -70,12 +75,11 @@ MENTOR_GENDER = (
     ('Unconcerned', 'Unconcerned'),
 )
 
-
-
 class Profile(models.Model):
     role = models.CharField(max_length=15, null = True ,choices=ROLES)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     uniId = models.CharField(max_length=100)
+    university = models.CharField(max_length=100, choices=UNIVERSITY, null=True, blank=False)
     study_year = models.CharField(max_length=100,choices=YEAR_OF_STUDY, blank=False)
     degree_programme = models.CharField(max_length=50, null = True ,blank=False,choices=BACHELOR_DEGREE_PROGRAMME)
     degree_programme_2 = models.CharField(max_length=50, null = True ,choices=BACHELOR_DEGREE_PROGRAMME)

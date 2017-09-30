@@ -11,6 +11,11 @@ YEAR_OF_STUDY = (
     ('5+','5+'),
 )
 
+UNIVERSITY = (
+    ('','-'),
+    ('ANU', 'The Australian National University'),
+)
+
 BACHELOR_DEGREE_PROGRAMME = (
     ('','-'),
     ('AACOM','Advanced Computing (Honours)'),
@@ -72,6 +77,7 @@ class SignupForm(forms.Form):
     first_name = forms.CharField(max_length=30, label='First Name')
     last_name = forms.CharField(max_length=30, label='Last Name')
     uniId = forms.CharField(max_length=100, label='University ID')
+    university = forms.ChoiceField(choices=UNIVERSITY, label='University')
     study_year = forms.ChoiceField(choices=YEAR_OF_STUDY, label="Year of Study")
     degree_programme = forms.ChoiceField(choices=BACHELOR_DEGREE_PROGRAMME, label='Bachelor Degree Program 1')
     degree_programme_2 = forms.ChoiceField(choices=BACHELOR_DEGREE_PROGRAMME, required = False, label='Bachelor Degree Program 2 (if applicable, e.g. flexible double degree)')
@@ -91,6 +97,7 @@ class SignupForm(forms.Form):
 
         user.profile.role = self.cleaned_data['role']
         user.profile.uniId = self.cleaned_data['uniId']
+        user.profile.university = self.cleaned_data['University']
         user.profile.study_year = self.cleaned_data['study_year']
         user.profile.degree_programme = self.cleaned_data['degree_programme']
         user.profile.degree_programme_2 = self.cleaned_data['degree_programme_2']
