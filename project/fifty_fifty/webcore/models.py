@@ -65,7 +65,7 @@ GENDER = (
     ('Male', 'Male'),
     ('Female', 'Female'),
     ('Other', 'Other'),
-    ('Rather not say', 'Rather not say'),
+    ('Prefer not to say', 'Prefer not to say'),
 )
 
 

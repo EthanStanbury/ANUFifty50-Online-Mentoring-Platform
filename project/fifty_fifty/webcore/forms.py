@@ -51,19 +51,19 @@ BACHELOR_DEGREE_PROGRAMME = (
     ('ECOMP','Diploma of Computing'),
 )
 
-
 ROLES = (
     ('Mentee', 'Mentee'),
     ('Mentor', 'Mentor'),
 )
 
 GENDER = (
-    ('', '-'), #error-checking st. "-" isn't a valid answer
+    ('','-'), #error-checking st. "-" isn't a valid answer
     ('Male', 'Male'),
     ('Female', 'Female'),
     ('Other', 'Other'),
-    ('Rather not say', 'Rather not say'),
+    ('Prefer not to say', 'Prefer not to say'),
 )
+
 
 
 MENTOR_GENDER = (
