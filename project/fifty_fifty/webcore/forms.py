@@ -16,7 +16,8 @@ UNIVERSITY = (
     ('ANU', 'The Australian National University'),
 )
 
-BACHELOR_DEGREE_PROGRAMME = (
+# Degree choices for Program 1
+STEM_DEGREE_PROGRAMME = (
     ('','-'),
     ('AACOM','Advanced Computing (Honours)'),
     ('AACRD','Advanced Computing (R&D) (Honours)'),
@@ -48,7 +49,44 @@ BACHELOR_DEGREE_PROGRAMME = (
     ('HSPSY','Science (Psychology) (Honours)'),
     ('ASENG','Software Engineering (Honours)'),
     ('ESCIE','Diploma of Science'),
-    ('ECOMP','Diploma of Computing'),
+    ('ECOMP','Diploma of Computing')
+)
+
+# This will be used in case someone is doing a double degree
+# The second degree can either be STEM or non-STEM
+DEGREE_PROGRAMME_2 = (
+    ('','-'),
+    ('AACOM','Advanced Computing (Honours)'),
+    ('AACRD','Advanced Computing (R&D) (Honours)'),
+    ('BADAN','Applied Data Analytics'),
+    ('HADAN','Applied Data Analytics (Honours)'),
+    ('BBIOT','Biotechnology'),
+    ('HBIOT','Biotechnology (Honours)'),
+    ('AENGI','Engineering (Honours)'),
+    ('AENRD','Engineering (R&D) (Honours)'),
+    ('BENSU','Environment and Sustainability'),
+    ('HENSU','Environment and Sustainability (Honours)'),
+    ('AENSU','Environment and Sustainability Advanced (Honours)'),
+    ('HENVS','Environemntal Studies'),
+    ('BGENE','Genetics'),
+    ('HGENE','Genetics (Honours)'),
+    ('BHLTH','Health Science (Honours)'),
+    ('BIT','Information Technology'),
+    ('HIT','Information Technology (Honours)'),
+    ('BMASC','Mathematical Sciences'),
+    ('HMASC','Mathematical Sciences (Honours)'),
+    ('BMEDS','Medical Science'),
+    ('HMEDS/HMDSA','Medical Science (Honours)'),
+    ('PHBSCIENCE', 'PhB / Bachelor of Philosophy (Honours) in Science'),
+    ('APSYC','Psychology (Honours)'),
+    ('BSC','Science'),
+    ('HSC','Science (Honours)'),
+    ('ASCAD','Science (Advanced) (Honours)'),
+    ('BSPSY','Science (Psychology)'),
+    ('HSPSY','Science (Psychology) (Honours)'),
+    ('ASENG','Software Engineering (Honours)'),
+    ('ESCIE','Diploma of Science'),
+    ('ECOMP','Diploma of Computing')
 )
 
 ROLES = (
@@ -64,12 +102,17 @@ GENDER = (
     ('Prefer not to say', 'Prefer not to say'),
 )
 
-
-
 MENTOR_GENDER = (
     ('Definitely', 'Definitely'),
     ('If possible', 'If possible'),
     ('Unconcerned', 'Unconcerned'),
+)
+
+MEDIUM_OF_INTERACTION = (
+    ('','-'),
+    ('Online', 'Online'),
+    ('In person', 'In person'),
+    ('Both', 'Both')
 )
 
 class SignupForm(forms.Form):
@@ -79,8 +122,8 @@ class SignupForm(forms.Form):
     uniId = forms.CharField(max_length=100, label='University ID')
     university = forms.ChoiceField(choices=UNIVERSITY, label='University')
     study_year = forms.ChoiceField(choices=YEAR_OF_STUDY, label="Year of Study")
-    degree_programme = forms.ChoiceField(choices=BACHELOR_DEGREE_PROGRAMME, label='Bachelor Degree Program 1')
-    degree_programme_2 = forms.ChoiceField(choices=BACHELOR_DEGREE_PROGRAMME, required = False, label='Bachelor Degree Program 2 (if applicable, e.g. flexible double degree)')
+    degree_programme = forms.ChoiceField(choices=STEM_DEGREE_PROGRAMME, label='Degree Program 1')
+    degree_programme_2 = forms.ChoiceField(choices=DEGREE_PROGRAMME_2, required = False, label='Degree Program 2 (if applicable, e.g. flexible double degree)')
     degree_major = forms.CharField(max_length=30, required = False, label='What is your degree major?')
     gender = forms.ChoiceField(choices=GENDER, label='What gender do you identify as?')
     mentor_gender = forms.ChoiceField(choices=MENTOR_GENDER, label='Would you prefer a mentee/mentor that is the same gender as you?')
@@ -88,6 +131,7 @@ class SignupForm(forms.Form):
     why_div_equ_inc = forms.CharField(max_length=150, required = False, widget=forms.Textarea, label='Why do you think diversity, equity and inclusion in STEM are important?')
     mentee_number = forms.IntegerField(min_value = 1, max_value = 3, initial = 1, required = False, label='How many mentees would you like to have?')
     hear_about = forms.CharField(max_length=150, widget=forms.Textarea, required = False, label='How did you hear about this program?')
+    medium_interaction = forms.ChoiceField(choices=MEDIUM_OF_INTERACTION, label='What will be your medium of interaction in the program?')
 
     def signup(self, request, user):
 
@@ -108,6 +152,7 @@ class SignupForm(forms.Form):
         user.profile.why_div_equ_inc = self.cleaned_data['why_div_equ_inc']
         user.profile.mentee_number = self.cleaned_data['mentee_number']
         user.profile.hear_about = self.cleaned_data['hear_about']
+        user.profile.medium_interaction = self.cleaned_data['medium_interaction']
 
         user.profile.save()
         user.save()
