@@ -87,6 +87,9 @@ class Profile(models.Model):
     mentee_number = models.IntegerField(default = 0, validators=[MinValueValidator(0), MaxValueValidator(3)])
     hear_about = models.CharField(max_length=150, null = True)
     paired_with = models.CharField(max_length=50, null = True)
+    paired_with2 = models.CharField(max_length=50, null = True) # Added second paired_with
+    paired_with3 = models.CharField(max_length=50, null = True) # Added third paired_with
+    mentee_number_remaning = models.IntegerField(default = 0, validators=[MinValueValidator(0), MaxValueValidator(3)],null = True) # Added mentee numbers remaining
 
 
     def __str__(self):

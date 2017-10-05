@@ -26,11 +26,31 @@ class Pair(models.Model):
 def transfer(mentee,mentor):
     menteeId = mentee.split(' ', 1)[1]
     mentorId = mentor.split(' ', 1)[1]
-    print(Profile.objects.all())
-    x = Profile.objects.filter(uniId__contains=mentorId).values_list('mentee_number',flat=True)[0]
-    print(x)
-    Profile.objects.filter(uniId__contains=menteeId).update(paired_with=mentorId)
-    Profile.objects.filter(uniId__contains=mentorId).update(paired_with=menteeId,mentee_number = x-1)
+
+    mentee_numbers = Profile.objects.filter(uniId__contains=mentorId).values_list('mentee_number',flat=True)[0] # Finds mentee numbers the mentor originally signed up for.
+    mentee_numbers_left = Profile.objects.filter(uniId__contains=mentorId).values_list('mentee_number_remaning',flat=True)[0] # Finds mentee numbers left.
+
+    print(mentee_numbers)
+    print(mentee_numbers_left)
+
+    curr_paired_with = Profile.objects.filter(uniId__contains=mentorId).values_list('paired_with',flat=True)[0] # Find current mentee selected mentor is paired with value.
+    curr_paired_with2 = Profile.objects.filter(uniId__contains=mentorId).values_list('paired_with2',flat=True)[0]
+    curr_paired_with3 = Profile.objects.filter(uniId__contains=mentorId).values_list('paired_with3',flat=True)[0]
+
+    print(curr_paired_with)
+    print(curr_paired_with2)
+    print(curr_paired_with3)
+
+    # Combs through paired_with and updates who the user is paired_with.
+    if (curr_paired_with == "" or curr_paired_with == None):
+        Profile.objects.filter(uniId__contains=mentorId).update(paired_with=menteeId)
+    elif (curr_paired_with2 == "" or curr_paired_with2 == None):
+        Profile.objects.filter(uniId__contains=mentorId).update(paired_with2=menteeId)
+    elif (curr_paired_with3 == "" or curr_paired_with3 == None):
+        Profile.objects.filter(uniId__contains=mentorId).update(paired_with3=menteeId)
+
+    Profile.objects.filter(uniId__contains=mentorId).update(paired_with=menteeId,mentee_number = mentee_numbers-1)
+
 
 
 
