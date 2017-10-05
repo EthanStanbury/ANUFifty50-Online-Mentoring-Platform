@@ -101,6 +101,7 @@ class SignupForm(forms.Form):
         user.profile.why_div_equ_inc = self.cleaned_data['why_div_equ_inc']
         user.profile.mentee_number = self.cleaned_data['mentee_number']
         user.profile.hear_about = self.cleaned_data['hear_about']
+        user.profile.mentee_number_remaning = self.cleaned_data['mentee_number'] #Update mentee_number_remaning same as mentee_number
 
         user.profile.save()
         user.save()
