@@ -4,6 +4,13 @@ from .models import Pair
 
 class PairForm(forms.ModelForm):
 
-first_name = forms.CharField(error_messages={'required': 'Please let us know what to call you!'})
     class Meta:
         model = Pair
+        fields = ['name', 'mentor', 'mentee']
+
+
+    def clean(self):
+        cleaned_data = super(PairForm, self).clean()
+        check = Pair.objects.filter(mentor=cleaned_data['mentor'], mentee=cleaned_data['mentee'])
+        if check:
+            return self.add_error('mentor', 'Mentor and Mentee combination already exists.')
