@@ -78,7 +78,7 @@ class Profile(models.Model):
     uniId = models.CharField(max_length=100)
     study_year = models.CharField(max_length=100,choices=YEAR_OF_STUDY, blank=False)
     degree_programme = models.CharField(max_length=50, null = True ,blank=False,choices=BACHELOR_DEGREE_PROGRAMME)
-    degree_programme_2 = models.CharField(max_length=50, null = True ,choices=BACHELOR_DEGREE_PROGRAMME)
+    degree_programme_2 = models.CharField(max_length=50, null = True ,blank = True,choices=BACHELOR_DEGREE_PROGRAMME) # Allowed blank=True
     degree_major = models.CharField(max_length=15, null = True)
     gender = models.CharField(max_length=15, null = True ,choices=GENDER)
     mentor_gender = models.CharField(max_length=15, null = True ,choices=MENTOR_GENDER)
@@ -86,9 +86,9 @@ class Profile(models.Model):
     why_div_equ_inc = models.CharField(max_length=150, null = True)
     mentee_number = models.IntegerField(default = 0, validators=[MinValueValidator(0), MaxValueValidator(3)])
     hear_about = models.CharField(max_length=150, null = True)
-    paired_with = models.CharField(max_length=50, null = True)
-    paired_with2 = models.CharField(max_length=50, null = True) # Added second paired_with
-    paired_with3 = models.CharField(max_length=50, null = True) # Added third paired_with
+    paired_with = models.CharField(max_length=50, null = True, blank = True)
+    paired_with2 = models.CharField(max_length=50, null = True, blank = True) # Added second paired_with
+    paired_with3 = models.CharField(max_length=50, null = True, blank  = True) # Added third paired_with
     mentee_number_remaning = models.IntegerField(default = 0, validators=[MinValueValidator(0), MaxValueValidator(3)],null = True) # Added mentee numbers remaining
 
 
