@@ -65,18 +65,19 @@
 
 <section id="weeklycontent" style="padding-bottom:40px;">
 		<div class="container" style="text-align:center;">
-			<h2 class="section-heading">THIS WEEK'S FOCUS:</h2>
+			{% for summary in summary_list %}
+			<h2 class="section-heading">{{ summary.title }}</h2>
 			<hr>
 				<div class="row" style="margin-bottom:20px;">
 						<div class="col-sm-6" style="text-align:justify;">
-								<p> Lorem ipsum dolor sit amet, graece quaestio sapientem te mei. Ad justo munere consectetuer quo, eirmod eripuit quo ei. Vel ullum omnium ocurreret no, ut sit graece melius lobortis, cu docendi contentiones has. No sea odio nusquam. Ei dico erat repudiandae eum, laoreet recusabo est ea, nec agam illum ridens at. Ignota delicata indoctum vim ea.
-										Et cetero fabulas pri. Eam an cetero sapientem salutatus, vim eu malis tibique delicatissimi. Ex oporteat complectitur vim. Et cum nisl facilis complectitur, sit sanctus habemus theophrastus in... </p>
+								<p>{{ summary.description }}</p>
 						</div>
 						<div class="col-sm-6">
-								<img src={% static "MenteePage/img/newsphotos.jpg" %} style="max-width:100%;"></img>  <!-- added photo for decoration ********** -->
+								<img src="{{ summary.image.url }}" style="max-width:100%;"></img>  <!-- added photo for decoration ********** -->
 						</div>
 				</div>
 				<a href="content.html" class="btn btn-primary btn-xl sr-button">READ MORE</a>
+			{% endfor %}
 		</div>
 </section>
 
