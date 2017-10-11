@@ -51,39 +51,105 @@
     </head>
     <body>
 
-        <div>
-            <div style="margin-top:50px;">
-                <div class="card">
-                    <ul class="nav nav-tabs" role="tablist">
-                    {% for mentee in mentee_list %}
-                        <li
-                                {% if mentee == mentee_list.0 %}
-                                    class="active"
-                                {% endif %}
-                        >
-                          <a href="#tab-{{mentee.id}}" data-toggle="tab">{{mentee.title}}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
+      <!-- CONTENT TABS + INFORMATION FOR MENTORS-->
+      {% if request.user.profile.role == 'Mentor' %}
+      <div>
+          <div style="margin-top:50px;">
+              <div class="card">
+                  <ul class="nav nav-tabs" role="tablist">
+                  {% for mentor in mentor_list %}
+                      <li
+                              {% if mentor == mentor_list.0 %}
+                                  class="active"
+                              {% endif %}
+                      >
+                        <a href="#tab-{{mentor.id}}" data-toggle="tab">{{mentor.title}}</a>
+                      </li>
+                      {% endfor %}
+                  </ul>
 
-                    <div class="tab-content">
-                        {% for mentee in mentee_list %}
-                        <div role="tabpanel" class="tab-pane fade
-                                {% if mentee == mentee_list.0 %}
-                                    in active
-                                {% endif %}"
-                                id ="tab-{{mentee.id}}">
-                            <div class="col-sm-12 text-center">
-                                <h2 class="section-heading">{{mentee.title}}</h2>
-                                <hr>
-                                <embed src="/media/{{mentee.docfile}}" width="100%" height="700px" type='application/pdf'>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
+                  <div class="tab-content">
+                      {% for mentor in mentor_list %}
+                      <div role="tabpanel" class="tab-pane fade
+                              {% if mentor == mentor_list.0 %}
+                                  in active
+                              {% endif %}"
+                              id ="tab-{{mentor.id}}">
+                          <div class="col-sm-12 text-center">
+                                <div class="container" style="text-align:center;">
+                                  <h2 class="section-heading">{{ mentor.title }}</h2>
+                                  <hr>
+                                    <div class="row" style="margin-bottom:20px;">
+                                        <div class="col-sm-6" style="text-align:justify;">
+                                            <p>{{ mentor.description }}</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <img src="{{ mentor.image.url }}" style="max-width:100%;"></img>  <!-- added photo for decoration ********** -->
+                                        </div>
+                                    </div>
+                                    <a href="{{ mentor.docfile.url }}" class="btn btn-primary btn-xl sr-button">OPEN DOCUMENT FILE</a>
+                                </div>
+                            </section>                              <hr>
+                              <embed src="/media/{{mentor.docfile}}" width="75%" height="500px" style="margin-bottom:100px;" type='application/pdf'><!--CHANGE TO SPECIFIC SIZE-->
+                          </div>
+                      </div>
+                      {% endfor %}
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      {% else %}
+
+      <!-- CONTENT TABS + INFORMATION FOR MENTEES-->
+      <div>
+          <div style="margin-top:50px;">
+              <div class="card">
+                  <ul class="nav nav-tabs" role="tablist">
+                  {% for mentee in mentee_list %}
+                      <li
+                              {% if mentee == mentee_list.0 %}
+                                  class="active"
+                              {% endif %}
+                      >
+                        <a href="#tab-{{mentee.id}}" data-toggle="tab">{{mentee.title}}</a>
+                      </li>
+                      {% endfor %}
+                  </ul>
+
+                  <div class="tab-content">
+                      {% for mentee in mentee_list %}
+                      <div role="tabpanel" class="tab-pane fade
+                              {% if mentee == mentee_list.0 %}
+                                  in active
+                              {% endif %}"
+                              id ="tab-{{mentee.id}}">
+                          <div class="col-sm-12 text-center">
+                                <div class="container" style="text-align:center;">
+                                  <h2 class="section-heading">{{ mentee.title }}</h2>
+                                  <hr>
+                                    <div class="row" style="margin-bottom:20px;">
+                                        <div class="col-sm-6" style="text-align:justify;">
+                                            <p>{{ mentee.description }}</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <img src="{{ mentee.image.url }}" style="max-width:100%;"></img>  <!-- added photo for decoration ********** -->
+                                        </div>
+                                    </div>
+                                    <a href="{{ mentee.docfile.url }}" class="btn btn-primary btn-xl sr-button">OPEN DOCUMENT FILE</a>
+                                </div>
+                            </section>
+                              <hr>
+                              <embed src="/media/{{mentee.docfile}}" width="75%" height="500px" style="margin-bottom:100px;" type='application/pdf'><!--CHANGE TO SPECIFIC SIZE-->
+                          </div>
+                      </div>
+                      {% endfor %}
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      {% endif %}
 
         {% include 'profile_footer.html' %}
 
