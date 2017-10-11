@@ -1,5 +1,7 @@
 {% load staticfiles %}
 {% include 'Profile_NavBar.html' %}
+{% load crispy_forms_tags %}
+
 
 {% block content %}
 <!DOCTYPE html>
@@ -68,25 +70,25 @@
                 <!-- using a default form template. Convert to Django later -->
                 <!-- should just use a modified version of the registration form -->
                 <form>
-                  <p class="text-muted">First name is <span style="color:black">"fname"</span>. Change to:</p>
+                  <p class="text-muted">First name is <span style="color:black">{{ user.first_name }}</span>. Change to:</p>
                   <input type="text" name="firstname"><br>
-                  <p class="text-muted">Last name is <span style="color:black">"lname"</span>. Change to:</p>
+                  <p class="text-muted">Last name is <span style="color:black">{{ user.last_name }}</span>. Change to:</p>
                   <input type="text" name="lastname">
-                  <p class="text-muted">Gender is <span style="color:black">"gender"</span>. Change to:</p>
+                  <p class="text-muted">Gender is <span style="color:black">{{ user.profile.gender }}</span>. Change to:</p>
                   <input type="text" name="gender">
-                  <p class="text-muted">Year of study is <span style="color:black">"N-th"</span>. Change to:</p>
+                  <p class="text-muted">Year of study is <span style="color:black">{{ user.profile.study_year }}</span>. Change to:</p>
                   <input type="text" name="yearofstudy">
-                  <p class="text-muted">Degree is <span style="color:black">"degree"</span>. Change to:</p>
+                  <p class="text-muted">Degree is <span style="color:black">{{ user.profile.degree_programme }}</span>. Change to:</p>
                   <input type="text" name="degree">
-                  <p class="text-muted">Preferred subject area is <span style="color:black">"subject"</span>. Change to:</p>
+                  <p class="text-muted">Preferred subject area is <span style="color:black">{{ user.profile.degree_major }}</span>. Change to:</p>
                   <input type="text" name="subject">
                   {% if request.user.profile.role == 'Mentor' %}
-                    <p class="text-muted">Preferred mentee gender<span style="color:black">"menteegender"</span>. Change to:</p>
+                    <p class="text-muted">Preferred mentee gender<span style="color:black">{{ user.profile.mentor_gender }}</span>. Change to:</p>
                     <input type="text" name="pref_mentee_gender">
-                    <p class="text-muted">Max number of mentees is <span style="color:black">"maxmentees"</span>. Change to:</p>
+                    <p class="text-muted">Max number of mentees is <span style="color:black">{{ user.profile.mentee_number }}</span>. Change to:</p>
                     <input type="text" name="num_mentees">
                   {% else %}
-                    <p class="text-muted">Preferred mentor gender is <span style="color:black">"mentorgender"</span>. Change to:</p>
+                    <p class="text-muted">Preferred mentor gender is <span style="color:black">{{ user.profile.mentor_gender }}</span>. Change to:</p>
                     <input type="text" name="pref_mentor_gender">
                   {% endif %}
                   <div class="col-lg-8 col-lg-offset-2 text-center" style="padding-bottom:100px;">

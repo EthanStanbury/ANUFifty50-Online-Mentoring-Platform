@@ -241,7 +241,7 @@ class SignupForm(forms.Form):
         user.last_name = self.cleaned_data['last_name']
         user.profile.role = self.cleaned_data['role']
         user.profile.uniId = self.cleaned_data['uniId']
-        user.profile.university = self.cleaned_data['University']
+        user.profile.university = self.cleaned_data['university']
         user.profile.study_year = self.cleaned_data['study_year']
         user.profile.degree_programme = self.cleaned_data['degree_programme']
         user.profile.degree_programme_2 = self.cleaned_data['degree_programme_2']
