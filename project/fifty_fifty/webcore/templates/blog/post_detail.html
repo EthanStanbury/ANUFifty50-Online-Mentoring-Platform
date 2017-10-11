@@ -37,16 +37,28 @@
 
     </head>
     <body>
-        <div class="post">
-            <h1>{{ post.title }}</h1>
-            <h2>{{ post.author }}</h2>
-            {% if post.published_date %}
-                <div class="date">
-                    {{ post.published_date }}
-                </div>
-            {% endif %}
-            <p>{{ post.text|linebreaksbr }}</p>
-        </div>
+      <!-- Page Content -->
+      <div class="container" style="margin-top:5%;">
+
+          <div class="row">
+
+              <!-- Blog Entries Column -->
+              <div class="col-md-8">
+
+                  <h1 class="page-header">
+                      {{post.title}}
+                  </h1>
+
+                  <p class="lead">by {{ post.author }}</p>
+                  <p><span class="glyphicon glyphicon-time"></span>{{ post.published_date }}</p>
+                  <hr>
+                    <img src="{{ post.image.url }}" alt="img" width=750px height=500px>
+                  <hr>
+                  <p style="margin-bottom:100px;">{{ post.text|linebreaksbr }}</p>
+
+            </div>
+          </div>
+      </div>
 
         {% include 'profile_footer.html' %}
 
