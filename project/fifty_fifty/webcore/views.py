@@ -3,7 +3,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.contrib import messages
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from content.models import Post, Mentee, Mentor, Content_Summary
+from content.models import Mentee, Mentor, Content_Summary
 from blog.models import Post
 from webcore.models import Profile, Xpairs
 from feedback.forms import FeedbackForm

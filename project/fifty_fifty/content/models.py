@@ -6,15 +6,6 @@ from django.db.models.signals import post_delete
 from django.dispatch.dispatcher import receiver
 
 
-
-class Post(models.Model):
-    title = models.CharField(max_length=200)
-    docfile = models.FileField(upload_to='news/', null=True)
-
-    def __str__(self):
-        return self.title
-
-
 class Mentor(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(null=True)
@@ -46,7 +37,6 @@ class Content_Summary(models.Model):
 
 
 #Delete content from folder
-@receiver(post_delete, sender=Post)
 @receiver(post_delete, sender=Mentor)
 @receiver(post_delete, sender=Mentee)
 @receiver(post_delete, sender=Content_Summary)
@@ -55,7 +45,6 @@ def delete(sender, instance, **kwargs):
     instance.docfile.delete(False)
 
 #Delete images from folder
-@receiver(post_delete, sender=Post)
 @receiver(post_delete, sender=Mentor)
 @receiver(post_delete, sender=Mentee)
 @receiver(post_delete, sender=Content_Summary)
@@ -64,7 +53,6 @@ def delete(sender, instance, **kwargs):
     instance.image.delete(False)
 
 #Edit docfile from folder
-@receiver(pre_save, sender=Post)
 @receiver(pre_save, sender=Mentor)
 @receiver(pre_save, sender=Mentee)
 def auto_delete_file_on_change(sender, instance, **kwargs):
@@ -80,7 +68,6 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
             os.remove(old_file.path)
 
 #Edit images from folder
-@receiver(pre_save, sender=Post)
 @receiver(pre_save, sender=Mentor)
 @receiver(pre_save, sender=Mentee)
 @receiver(pre_save, sender=Content_Summary)
