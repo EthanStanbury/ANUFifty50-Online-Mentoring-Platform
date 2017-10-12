@@ -178,10 +178,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 ##DONT DELETE STMP SETTINGS
-#EMAIL_HOST = 'smtp.zoho.com'
-#EMAIL_PORT = 587
-#EMAIL_HOST_USER = 'mentoring@fifty50.org.au'
-#EMAIL_HOST_PASSWORD = '#########'
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'mentoring@fifty50.org.au'
+EMAIL_HOST_PASSWORD = 'fiddycent'
 #EMAIL_USE_TLS = True
-#DEFAULT_FROM_EMAIL = 'mentoring@fifty50.org.au'
-#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'mentoring@fifty50.org.au'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
