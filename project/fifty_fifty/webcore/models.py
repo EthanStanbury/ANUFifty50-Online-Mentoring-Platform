@@ -234,31 +234,17 @@ class Profile(models.Model):
     why_div_equ_inc = models.CharField(max_length=150, null = True)
     mentee_number = models.IntegerField(default = 0, validators=[MinValueValidator(0), MaxValueValidator(3)])
     hear_about = models.CharField(max_length=150, null = True)
-    paired_with = models.CharField(max_length=50, null = True)
+    paired_with = models.CharField(max_length=50, null = True, blank = True)
+    paired_with2 = models.CharField(max_length=50, null = True, blank = True) # Added second paired_with
+    paired_with3 = models.CharField(max_length=50, null = True, blank  = True) # Added third paired_with
     medium_interaction = models.CharField(max_length=50, null=True, choices=MEDIUM_OF_INTERACTION)
+    mentee_number_remaning = models.IntegerField(default = 0, validators=[MinValueValidator(0), MaxValueValidator(3)],null = True) # Added mentee numbers remaining
+
 
     def __str__(self):
        return str(self.role)+ " "+ str(self.uniId)
 
-class Xpairs(models.Model):
-    mentee = models.ForeignKey(Profile, related_name="Xmentees", limit_choices_to={'role': 'Mentee'},)
-    mentor = models.ForeignKey(Profile, related_name="Xmentors", limit_choices_to={'role': 'Mentor'})
-    name = models.CharField(max_length=50, help_text='Enter a unique pair name',blank=True, null = True)
 
-    def save(self, *args, **kwargs): ## Overiding the save function of Xpairs
-        self.name = str(self.mentee) +" -> "+ str(self.mentor)  ## Changing name of pair as mentee -> mentor
-        self.shortcode = transfer(str(self.mentee),str(self.mentor)) ## trimming mentee and mentor, and transfering them to Profile.paired_with
-        super(Xpairs, self).save(*args, **kwargs)
-
-    def __str__(self):
-       return str(self.mentee) +" -> "+ str(self.mentor)
-
-def transfer(tee,tor):
-    menteeId = tee.split(' ', 1)[1]
-    mentorId = tor.split(' ', 1)[1]
-    print(Profile.objects.all())
-    Profile.objects.filter(uniId__contains=menteeId).update(paired_with=mentorId)
-    Profile.objects.filter(uniId__contains=mentorId).update(paired_with=menteeId)
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

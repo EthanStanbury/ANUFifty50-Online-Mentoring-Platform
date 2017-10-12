@@ -5,7 +5,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from content.models import Mentee, Mentor, Content_Summary
 from blog.models import Post
-from webcore.models import Profile, Xpairs
+from webcore.models import Profile
 from feedback.forms import FeedbackForm
 from feedback.models import Feedback_contact
 from django.utils import timezone

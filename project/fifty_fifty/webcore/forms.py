@@ -253,6 +253,7 @@ class SignupForm(forms.Form):
         user.profile.mentee_number = self.cleaned_data['mentee_number']
         user.profile.hear_about = self.cleaned_data['hear_about']
         user.profile.medium_interaction = self.cleaned_data['medium_interaction']
+        user.profile.mentee_number_remaning = self.cleaned_data['mentee_number'] #Update mentee_number_remaning same as mentee_number
 
         user.profile.save()
         user.save()
