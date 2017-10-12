@@ -3,9 +3,9 @@ from django.core.mail import send_mail, BadHeaderError
 from django.contrib import messages
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from content.models import Post, Mentee, Mentor, Training
+from content.models import Mentee, Mentor, Content_Summary
 from blog.models import Post
-from webcore.models import Profile, Xpairs
+from webcore.models import Profile
 from feedback.forms import FeedbackForm
 from feedback.models import Feedback_contact
 from django.utils import timezone
@@ -20,7 +20,7 @@ def home(request):
 @login_required
 def userProfile(request):
     user = request.user
-    context = {'user':user}
+    context = {'user':user, 'summary_list':Content_Summary.objects.all()}
     template = 'menteelogin.html'
     return render(request,template,context)
 
@@ -48,7 +48,7 @@ def userProfileMentor(request):
 @login_required
 def userProfileResources(request):
     user = request.user
-    context = {'user':user, 'post_list':Post.objects.all(), 'mentee_list':Mentee.objects.all(), 'mentor_list':Mentor.objects.all(), 'training_list':Training.objects.all()}
+    context = {'user':user, 'post_list':Post.objects.all(), 'mentee_list':Mentee.objects.all(), 'mentor_list':Mentor.objects.all(), 'Content_Summary_list':Content_Summary.objects.all()}
     template = 'resources.html'
     return render(request,template,context)
 
@@ -69,7 +69,7 @@ def userProfileProfile(request):
 @login_required
 def userProfileContent(request):
     user = request.user
-    context = {'user':user, 'mentee_list':Mentee.objects.all()}
+    context = {'user':user, 'mentee_list':Mentee.objects.all(), 'mentor_list':Mentor.objects.all()}
     template = 'content.html'
     return render(request,template,context)
 

@@ -27,6 +27,7 @@
 
         <!-- Custom Fonts -->
         <link href={% static "MenteePage/vendor/font-awesome/css/font-awesome.min.css" %} rel="stylesheet" type="text/css">
+
         <!-- Plugin CSS -->
         <link href={% static "MenteePage/vendor/magnific-popup/magnific-popup.css" %} rel="stylesheet" type="text/css">
 
@@ -58,14 +59,6 @@
     <body>
 
 <section class="cd-faq">
-	<!-- <ul class="cd-faq-categories">
-		<li><a class="selected" href="#basics">Basics</a></li>
-		<li><a href="#mobile">Mobile</a></li>
-		<li><a href="#account">Account</a></li>
-		<li><a href="#payments">Payments</a></li>
-		<li><a href="#privacy">Privacy</a></li>
-		<li><a href="#delivery">Delivery</a></li>
-	</ul> <!-- cd-faq-categories -->
 
   <h1 class="section-heading">FAQs</h1>
 
@@ -129,6 +122,15 @@
 			</li>
 
       <li>
+        <a class="cd-faq-trigger" href="#0">I have been a mentee in the program this semester. How can I become a mentor?</a>
+        <div class="cd-faq-content">
+          <p>
+            Contact an admin at <a href="mailto:mentoring@fifty50.org.au">mentoring@fifty50.org.au</a> and they can change your status to a mentor
+          </p>
+        </div>
+      </li>
+
+      <li>
         <a class="cd-faq-trigger" href="#0">How can I be a good mentor?</a>
         <div class="cd-faq-content">
           <p>
@@ -157,24 +159,10 @@
 	<a href="#0" class="cd-close-panel">Close</a>
 </section> <!-- cd-faq -->
 
-
-
-    <footer class="contact-footer">
-        <div style="text-align:center;">
-            <span style="color:white;">Contact Us:</span>
-            <div style="padding-right:15px;"></div>
-            <a href="https://www.instagram.com/anu_fifty50/" style="margin-right:15px;"><i class="fa fa-lg fa-instagram text-primary sr-contact"></i></a>
-            <a href="contact.html" style="margin-right:15px;"><i class="fa fa-lg fa-envelope-o text-primary sr-contact"></i></a>
-            <a href="https://www.facebook.com/ANUFifty50STEM/" style="margin-right:15px;"><i class="fa fa-lg fa-facebook-official text-primary sr-contact"></i></a>
-            <a href="https://twitter.com/anu_Fifty50"><i class="fa fa-lg fa-twitter text-primary sr-contact"></i></a>   <!-- added fa-twitter icon -->
-        </div>
-    </footer>
+{% include 'profile_footer.html' %}
 
     <!-- jQuery -->
     <script src={% static "MenteePage/vendor/jquery/jquery.min.js" %}></script>
-
-    <!-- Theme JavaScript -->
-    <script src={% static "MenteePage/js/creative.min.js" %}></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src={% static "MenteePage/vendor/bootstrap/js/bootstrap.min.js" %}></script>
@@ -184,10 +172,13 @@
     <script src={% static "MenteePage/vendor/scrollreveal/scrollreveal.min.js" %}></script>
     <script src={% static "MenteePage/vendor/magnific-popup/jquery.magnific-popup.min.js" %}></script>
 
+    <!-- Theme JavaScript -->
+    <script src={% static "MenteePage/js/creative.min.js" %}></script>
+
     <script src={% static "MenteePage/js/jquery-2.1.1.js" %}></script>
     <script src={% static "MenteePage/js/jquery.mobile.custom.min.js" %}></script>
     <script src={% static "MenteePage/js/main.js" %}></script> <!-- Resource jQuery -->
 
-</body>
+  </body>
 </html>
 {% endblock %}

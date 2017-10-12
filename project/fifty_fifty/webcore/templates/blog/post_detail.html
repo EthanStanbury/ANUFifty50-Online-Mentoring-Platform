@@ -37,27 +37,30 @@
 
     </head>
     <body>
-        <div class="post">
-            <h1>{{ post.title }}</h1>
-            <h2>{{ post.author }}</h2>
-            {% if post.published_date %}
-                <div class="date">
-                    {{ post.published_date }}
-                </div>
-            {% endif %}
-            <p>{{ post.text|linebreaksbr }}</p>
-        </div>
+      <!-- Page Content -->
+      <div class="container" style="margin-top:5%;">
 
-        <footer class="contact-footer">
-            <div style="text-align:center;">
-                <span style="color:white;">Contact Us:</span>
-                <div style="padding-right:15px;"></div>
-                <a href="https://www.instagram.com/anu_fifty50/" style="margin-right:15px;"><i class="fa fa-lg fa-instagram text-primary sr-contact"></i></a>
-                <a href="contact.html" style="margin-right:15px;"><i class="fa fa-lg fa-envelope-o text-primary sr-contact"></i></a>
-                <a href="https://www.facebook.com/ANUFifty50STEM/" style="margin-right:15px;"><i class="fa fa-lg fa-facebook-official text-primary sr-contact"></i></a>
-                <a href="https://twitter.com/anu_Fifty50"><i class="fa fa-lg fa-twitter text-primary sr-contact"></i></a>   <!-- added fa-twitter icon -->
+          <div class="row">
+
+              <!-- Blog Entries Column -->
+              <div class="col-md-8">
+
+                  <h1 class="page-header">
+                      {{post.title}}
+                  </h1>
+
+                  <p class="lead">by {{ post.author }}</p>
+                  <p><span class="glyphicon glyphicon-time"></span>{{ post.published_date }}</p>
+                  <hr>
+                    <img src="{{ post.image.url }}" alt="img" width=750px height=500px>
+                  <hr>
+                  <p style="margin-bottom:100px;">{{ post.text|linebreaksbr }}</p>
+
             </div>
-        </footer>
+          </div>
+      </div>
+
+        {% include 'profile_footer.html' %}
 
         <!-- jQuery -->
         <script src={% static "MenteePage/vendor/jquery/jquery.min.js" %}></script>

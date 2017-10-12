@@ -1,5 +1,7 @@
 {% load staticfiles %}
 {% include 'Profile_NavBar.html' %}
+{% load crispy_forms_tags %}
+
 
 {% block content %}
 <!DOCTYPE html>
@@ -27,6 +29,7 @@
 
         <!-- Custom Fonts -->
         <link href={% static "MenteePage/vendor/font-awesome/css/font-awesome.min.css" %} rel="stylesheet" type="text/css">
+
         <!-- Plugin CSS -->
         <link href={% static "MenteePage/vendor/magnific-popup/magnific-popup.css" %} rel="stylesheet" type="text/css">
 
@@ -64,40 +67,36 @@
             </div>
             <div class="col-lg-8 col-lg-offset-2" style="padding-bottom:15px;">
 
-
                 <!-- using a default form template. Convert to Django later -->
                 <!-- should just use a modified version of the registration form -->
                 <form>
-                  <p class="text-muted">First name is <span style="color:black">"fname"</span>. Change to:</p>
+                  <p class="text-muted">First name is <span style="color:black">{{ user.first_name }}</span>. Change to:</p>
                   <input type="text" name="firstname"><br>
-                  <p class="text-muted">Last name is <span style="color:black">"lname"</span>. Change to:</p>
+                  <p class="text-muted">Last name is <span style="color:black">{{ user.last_name }}</span>. Change to:</p>
                   <input type="text" name="lastname">
-                  <p class="text-muted">Gender is <span style="color:black">"gender"</span>. Change to:</p>
+                  <p class="text-muted">Gender is <span style="color:black">{{ user.profile.gender }}</span>. Change to:</p>
                   <input type="text" name="gender">
-                  <p class="text-muted">Year of study is <span style="color:black">"N-th"</span>. Change to:</p>
+                  <p class="text-muted">Year of study is <span style="color:black">{{ user.profile.study_year }}</span>. Change to:</p>
                   <input type="text" name="yearofstudy">
-                  <p class="text-muted">Degree is <span style="color:black">"degree"</span>. Change to:</p>
+                  <p class="text-muted">Degree is <span style="color:black">{{ user.profile.degree_programme }}</span>. Change to:</p>
                   <input type="text" name="degree">
-                  <p class="text-muted">Preferred subject area is <span style="color:black">"subject"</span>. Change to:</p>
+                  <p class="text-muted">Preferred subject area is <span style="color:black">{{ user.profile.degree_major }}</span>. Change to:</p>
                   <input type="text" name="subject">
                   {% if request.user.profile.role == 'Mentor' %}
-                    <p class="text-muted">Preferred mentee gender<span style="color:black">"menteegender"</span>. Change to:</p>
+                    <p class="text-muted">Preferred mentee gender<span style="color:black">{{ user.profile.mentor_gender }}</span>. Change to:</p>
                     <input type="text" name="pref_mentee_gender">
-                    <p class="text-muted">Max number of mentees is <span style="color:black">"maxmentees"</span>. Change to:</p>
+                    <p class="text-muted">Max number of mentees is <span style="color:black">{{ user.profile.mentee_number }}</span>. Change to:</p>
                     <input type="text" name="num_mentees">
                   {% else %}
-                    <p class="text-muted">Preferred mentor gender is <span style="color:black">"mentorgender"</span>. Change to:</p>
+                    <p class="text-muted">Preferred mentor gender is <span style="color:black">{{ user.profile.mentor_gender }}</span>. Change to:</p>
                     <input type="text" name="pref_mentor_gender">
                   {% endif %}
+                  <div class="col-lg-8 col-lg-offset-2 text-center" style="padding-bottom:100px;">
+                    <a href="#" class="btn btn-primary btn-xl sr-button">Make these changes!</a>
+                      <!-- have prompt "are you sure?" with a list of the changes made underneath. !-->
+                  </div>
                 </form>
                 <!-- -->
-
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                  <a href="#" class="btn btn-primary btn-xl sr-button">Make these changes!</a>
-                    <!-- have prompt "are you sure?" with a list of the changes made underneath. !-->
-                </div>
-
-
             </div>
           </div>
       </section>
@@ -106,22 +105,10 @@
 
 </section>
 
-    <footer class="contact-footer">
-        <div style="text-align:center;">
-            <span style="color:white;">Contact Us:</span>
-            <div style="padding-right:15px;"></div>
-            <a href="https://www.instagram.com/anu_fifty50/" style="margin-right:15px;"><i class="fa fa-lg fa-instagram text-primary sr-contact"></i></a>
-            <a href="contact.html" style="margin-right:15px;"><i class="fa fa-lg fa-envelope-o text-primary sr-contact"></i></a>
-            <a href="https://www.facebook.com/ANUFifty50STEM/" style="margin-right:15px;"><i class="fa fa-lg fa-facebook-official text-primary sr-contact"></i></a>
-            <a href="https://twitter.com/anu_Fifty50"><i class="fa fa-lg fa-twitter text-primary sr-contact"></i></a>   <!-- added fa-twitter icon -->
-        </div>
-    </footer>
+{% include 'profile_footer.html' %}
 
     <!-- jQuery -->
     <script src={% static "MenteePage/vendor/jquery/jquery.min.js" %}></script>
-
-    <!-- Theme JavaScript -->
-    <script src={% static "MenteePage/js/creative.min.js" %}></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src={% static "MenteePage/vendor/bootstrap/js/bootstrap.min.js" %}></script>
@@ -130,6 +117,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src={% static "MenteePage/vendor/scrollreveal/scrollreveal.min.js" %}></script>
     <script src={% static "MenteePage/vendor/magnific-popup/jquery.magnific-popup.min.js" %}></script>
+
+    <!-- Theme JavaScript -->
+    <script src={% static "MenteePage/js/creative.min.js" %}></script>
 
     <script src={% static "MenteePage/js/jquery-2.1.1.js" %}></script>
     <script src={% static "MenteePage/js/jquery.mobile.custom.min.js" %}></script>

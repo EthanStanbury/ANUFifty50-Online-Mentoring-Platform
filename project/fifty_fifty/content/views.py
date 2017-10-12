@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.utils import timezone
-from .models import Post, Mentor, Mentee, Training
+from .models import Mentor, Mentee, Content_Summary
 
 
 def upload_file(request):
