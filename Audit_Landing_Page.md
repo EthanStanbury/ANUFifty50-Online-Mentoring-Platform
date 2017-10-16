@@ -89,6 +89,13 @@ One of the main issues we have been having in the past few weeks was due to pair
 A few times in the past week we have found that the master branch was not working due to migration files being edited. We have found this issue due to Git because when merging files it shows the difference of two files and has some weird text it inputs into some files which "break" our project. These issues are easy to solve but can be frustrating at stages.
   
 ### TECHNICAL BREADTH OF OUTPUTS
+Since the last audit, there have been a few modifications that show technical breadth of the outputs. 
+
+The frontend has obtained a few extra features (some of which are mentioned in the above sections) which offer a greater technical breadth. The front page now has an embedded Facebook and Twitter news feed, with live updates from the ANUFifty50 pages. The Twitter feed is also contained in the blog page.
+
+There were several attempts to improve the mobile-compatibility of the website. This is still ongoing, and has improved the technical breadth by catering for a multitude of platforms. 
+
+
 Since our previous Project Concept Audit, we have been trying to complete a wide range of issues which are both located on the front-end and the back-end of our website. Such issues can include editing the size of text or the colour of text to a webpage or creating a new layout for a webpage. Many of the issues regarding the back-end are all to do with Django and updating the way in which the framework works, so that we can get it to work in the way we want. For example, manual pairing is now finished due to admins being able to see which student is paired to which mentor. In addition to this, converting our current SQLite database to a MySQL database was a different task that we had to deal with.
 <p>
 Since we have made our project open source, it has been very good seeing the amount of people who have been interesed in working on our project, so far 3 have joined. As soon as they joined we needed to explain to them what the project was and what they can work on. This took a while to do as we weren't sure of their technical ability and/or what our team was working on currently. The way we solved this was to give them set tasks which our team wasn't currently working on during the week in which they could work on. The other challenge was that we were dealing with people from half way around the world which made it a bit more strenouous to communicate with. In addition to this, they posted on Slack very often which made it very important to respond to their question asap, so that they could continue their work/progress.
