@@ -1,6 +1,10 @@
-# ANU Fifty50 Website
+<img src="project/static/static/Homepage/img/logo.png" width="100" height="100" align="left">
 
-ANU Fifty50 mentoring project.
+# ONLINE MENTORING PROGRAM PLATFORM
+
+## CLIENT - ANU FIFTY50
+
+# ANU Fifty50 Mentoring Website
 
 
 ## Quick Start
