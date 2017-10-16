@@ -21,11 +21,9 @@ The project is to build an Online Mentoring Platform in the form of a website. T
 10. **Emily Campbell** - *Former Client*
 
 ## HOW TO RUN THE PROJECT
-Change directory to project and follow the instructions:
-https://github.com/Nikita1710/Fifty50-Mentoring-Staging/blob/master/project/README.md
+The project can be run by simply going to our main GitHub page and looking at the README below: https://github.com/Nikita1710/ANUFifty50-Online-Mentoring-Platform 
 
-However, if you wish to run the latest copy, it can be accessed in the Development branch at:
-https://github.com/Nikita1710/ANUFifty50-Online-Mentoring-Platform 
+However, if you wish to run the latest copy, it can be accessed in the Development branch, here: https://github.com/Nikita1710/ANUFifty50-Online-Mentoring-Platform/tree/Development 
 
 
 ## PROJECT AUDIT REQUIREMENTS
@@ -60,48 +58,50 @@ https://trello.com/techlauncher2017onlinementoringplatform
 ### GOOGLE DRIVE
 1. Root Folder: https://drive.google.com/drive/folders/0B90o2KWKXkDqbWQ3clltaFdBVHc?usp=sharing
 2. Tutor Meetings: https://drive.google.com/drive/folders/0B90o2KWKXkDqbGk5eEI1eVJXMUk?usp=sharing
-3. Client Meetings:
-https://drive.google.com/drive/folders/0B90o2KWKXkDqVFU4Q012NGtQVW8?usp=sharing
-4. Team Meetings:
-https://drive.google.com/drive/folders/0B541nY2e_DZodlpEWnY5Tzh1M0E?usp=sharing
+3. Client Meetings: https://drive.google.com/drive/folders/0B90o2KWKXkDqVFU4Q012NGtQVW8?usp=sharing
+4. Team Meetings: https://drive.google.com/drive/folders/0B541nY2e_DZodlpEWnY5Tzh1M0E?usp=sharing
 5. Project Documents: https://drive.google.com/drive/folders/0Bw7MUyh12MoYSmVybWtVOS1GU2s?usp=sharing
 6. User Testing Documents : https://drive.google.com/drive/folders/0Bw7MUyh12MoYRno4VWNxVEtOaXc?usp=sharing
-7. Lecture Notes : https://drive.google.com/drive/folders/0B90o2KWKXkDqSFNJSzJUOWt4RVU?usp=sharing
-8. Decision Paper : https://docs.google.com/document/d/1XtujnVUvyAoELIFgfqHR2vYqOldP2CBT82ymI5FR2tA/edit?usp=sharing
-9. Requirements Document: https://drive.google.com/open?id=1qKgYfd_GCYSdkY3e44BlUMY-dMn5Dcj8wFL-oyatUzU 
-10. Handover Documents: https://drive.google.com/drive/folders/0Bw7MUyh12MoYdmhWWDlEbnlMa2M?usp=sharing 
+7. Decision Paper : https://docs.google.com/document/d/1XtujnVUvyAoELIFgfqHR2vYqOldP2CBT82ymI5FR2tA/edit?usp=sharing
+8. Requirements Document: https://drive.google.com/open?id=1qKgYfd_GCYSdkY3e44BlUMY-dMn5Dcj8wFL-oyatUzU 
+9. Handover Documents: https://drive.google.com/drive/folders/0Bw7MUyh12MoYdmhWWDlEbnlMa2M?usp=sharing 
 
 ## PROJECT GOVERNANCE
 ### EVIDENCE OF DECISION MAKING
-Evidence of all decisions since week 1 can be found in our <a href="https://docs.google.com/document/d/1XtujnVUvyAoELIFgfqHR2vYqOldP2CBT82ymI5FR2tA/edit?usp=sharing">Decision Paper</a>
+Evidence of all the decisions that we have made since Week 1 of Semester Two can be found in our decision paper, available at this link: <a href="https://docs.google.com/document/d/1XtujnVUvyAoELIFgfqHR2vYqOldP2CBT82ymI5FR2tA/edit?usp=sharing">Decision Paper</a>.
 
 ### ORGANISATION OF THE PROJECT
-As you can see at the top of our page, each team member has a specific role. Each role is either relevant to working on the front-end of our website or the back-end of our website. Each person has assigned tasks which can be found in our <a href="https://github.com/Nikita1710/ANUFifty50-Online-Mentoring-Platform/issues">GitHub Issues Log</a>. In addition tasks which are deemed "administrative" are logged on our <a href="https://trello.com/b/l25xR0T2/timeline-semester-2">Trello Board</a> to keep track week by week. This means all assessment related items and goals for the week are logged on that board.
+Noted at the top of this markdown file are the specific roles of our current team members. Each role is either relevant to working on the front-end of our website or the back-end of our website. Team members assign tasks to themselves or are assigned tasks based on their area of knowledge, which can be found in our <a href="https://github.com/Nikita1710/ANUFifty50-Online-Mentoring-Platform/issues">GitHub Issues Log</a>. Administrative tasks are logged in our <a href="https://trello.com/b/l25xR0T2/timeline-semester-2">Trello Board</a>, however, in the past few weeks we have found it easier to keep track of our administrative tasks using the Techlauncher website of what assessment is due. This is a reactionary process which has worked well since we had clear indication of when each assessment was due, allowing us to start early. 
+
+After our last audit we began using a Google Chrome Extension called ZenHub which allowed us to enable the KANBAN agile methodology to GitHub. This means that we now have a “board” that supports the KANBAN model! If you would like to see our board, download and enable the extension <a href="https://chrome.google.com/webstore/detail/zenhub-for-github/ogcgkffhplmphkaahpmffcafajaocjbd">here</a>. Then go to our GitHub Repository and click on Board or use this link: <a href="https://github.com/Nikita1710/ANUFifty50-Online-Mentoring-Platform/issues#boards?repos=96168761">GitHub Board</a>.
+
+Since we are using ZenHub for issue progress tracking, we don’t use Trello as much and combine the administrative tasks into ZenHub as well. The benefits we have found by using a KANBAN agile methodology is:
+* You can visualize the workflow
+* It allows us to be responsive to changes.
+
 
 ### TRACEABILITY OF ACTIONS
-Every task that is created has a trace of who has worked on it. When committing our code, we add “#<Issue Number>” to our commit message so that GitHub can recognise it and add it to the respective issue. Each action that is performed on an issue, like adding it to a milestone, changing assignees or closing or opening the issue is logged by GitHub. You can find our github issue log here: <a href="https://github.com/Nikita1710/ANUFifty50-Online-Mentoring-Platform/issues">GitHub Issues Log</a>
+Every task that is created has a trace of who has worked on it. When committing our code, we add “#[Issue Number]” to our commit message so that GitHub can recognise it and add it to the respective issue. Each action that is performed on an issue, like adding it to a milestone, changing assignees or closing or opening the issue is logged by GitHub. You can find our github issue log here: <a href="https://github.com/Nikita1710/ANUFifty50-Online-Mentoring-Platform/issues">GitHub Issues Log</a>
 
 
 ## PROJECT OUTPUTS
 ### TECHNICAL DEPTH OF OUTPUTS
-One of the main issues we have been having in the past few weeks was due to pairing as an admin couldn't easily see which mentor was paired to a mentee. For this we had to look back into our model of how we instatiated our mentees and mentors. We were then able to link this to the pairing application within Django so that an admin can now see which user is a mentor or mentee and in a pair - who is the mentor and who is the mentee. In addition, when creating a new pair, the list will seach over the mentors and over the mentees separately.
+Django encompasses a lot of functionality, however it takes some time to develop when you are using external email addresses to enable Simple Mail Transfer Protocol (SMTP). Over the past few weeks we have been working on SMTP, trying to send out emails to the Fifty50 Mentoring email with assistance from contributors. 
 <p>
-A few times in the past week we have found that the master branch was not working due to migration files being edited. We have found this issue due to Git because when merging files it shows the difference of two files and has some weird text it inputs into some files which "break" our project. These issues are easy to solve but can be frustrating at stages.
+Developing a system to enable mentors to request a maximum of three mentees or less was a difficult task as we had to deal with different Django Apps and files, while sending information from one file to another within the framework.
+<p>
+Overwriting previous data from the database was an interesting issue we found because we wanted mentees and mentors to be able to edit the personal information. This meant we had to grab the ‘changed’ information from the html page, pass it into the Django framework for it to then update the database. 
+<p>
+Combining Javascript and Django Template Tags was a struggle as the tabs on our Content pages are procedurally generated depending on how many content posts an admin makes on the backend in either mentee or mentor.
   
 ### TECHNICAL BREADTH OF OUTPUTS
-Since the last audit, there have been a few modifications that show technical breadth of the outputs. 
-
-The frontend has obtained a few extra features (some of which are mentioned in the above sections) which offer a greater technical breadth. The front page now has an embedded Facebook and Twitter news feed, with live updates from the ANUFifty50 pages. The Twitter feed is also contained in the blog page.
-
-There were several attempts to improve the mobile-compatibility of the website. This is still ongoing, and has improved the technical breadth by catering for a multitude of platforms. 
-
-
-Since our previous Project Concept Audit, we have been trying to complete a wide range of issues which are both located on the front-end and the back-end of our website. Such issues can include editing the size of text or the colour of text to a webpage or creating a new layout for a webpage. Many of the issues regarding the back-end are all to do with Django and updating the way in which the framework works, so that we can get it to work in the way we want. For example, manual pairing is now finished due to admins being able to see which student is paired to which mentor. In addition to this, converting our current SQLite database to a MySQL database was a different task that we had to deal with.
+Since the last audit, there have been a few modifications that show technical breadth of the outputs. We have been working heavily on making the website more maintenance friendly. This means that the web-pages that were static during our last audit have now been made dynamic within the Django framework. Each of the separate pages have their own app which we have worked on and now admins can create content or blog posts when they want to. Manual pairing was updated to include the requirement of mentors only having a maximum of three mentees or less.The database was converted from SQLite to MySQL. There were several attempts to improve the mobile-compatibility of the website. This is still ongoing, and has improved the technical breadth by catering for a multitude of platforms. In addition, the front page now has an embedded Facebook and Twitter news feed, with live updates from the ANUFifty50 pages. The Twitter feed is also contained in the blog page.
 <p>
-Since we have made our project open source, it has been very good seeing the amount of people who have been interesed in working on our project, so far 3 have joined. As soon as they joined we needed to explain to them what the project was and what they can work on. This took a while to do as we weren't sure of their technical ability and/or what our team was working on currently. The way we solved this was to give them set tasks which our team wasn't currently working on during the week in which they could work on. The other challenge was that we were dealing with people from half way around the world which made it a bit more strenouous to communicate with. In addition to this, they posted on Slack very often which made it very important to respond to their question asap, so that they could continue their work/progress.
+One contributor developed a useful app that collated our feedback and saved it in our database as well as sending an email out of when the feedback was completed to the Fifty50 Mentoring email. Our Github Board was updated at least every day if not every 2-3 days when either new issues were getting added or issues were being completed. Making sure that we managed our issues depending on their priority and in relation to project or assessment work took a bit of effort as we had to complete as much as we could by the project showcase. However, creating milestones to make sure we were on track helped us out. 
+
 
 ### APPROPRIATENESS OF OUTPUTS
-All of these outputs in which we worked towards and delivered in the past few weeks contributed to completing the <a href="https://drive.google.com/file/d/0B1esrEn1yXSeUk0wQW5URUY3b0k/view?usp=sharing">Minimal Viable Product</a> in which our Client can now run a test Mentoring Program within their committee. This has ticked off one of the project requirements stated by the client.
+The outputs we have worked on and delivered since our last audit have been targeted towards our Project Showcase milestone which can be found at this link: <a href="https://github.com/Nikita1710/ANUFifty50-Online-Mentoring-Platform/milestone/1?closed=1&page=1">Project Showcase</a>. It addresses the requirements outlined in the requirements document and our client is pleased with what the platform can do. 
 
 ## PROJECT APPROACH
 ### DEVELOPMENT APPROACH
@@ -112,8 +112,6 @@ Before starting to work on an issue, team members assign themselves to it and mo
 Since opening our project to the wider community, we now have a bit more time, which allows us to offer them tasks in which they can work on and we can learn from what they have done. During each team meeting we will now review all pull requests before we move on, so that we can then update our contributors.
 
 ### ENGAGING WITH STAKEHOLDERS
-Since our last Project Concept Audit, we have met up with our client twice, on the 13th of August and 27th of August, in which the agenda of the meetings can be <a href="https://drive.google.com/drive/folders/0B1esrEn1yXSebUE1RmJqVEFLWjQ?usp=sharing">found here</a>. In addition to this, we also have a channel on our Slack Team called #client_communication which can show all the discussions we have had with our client. Last client meeting, we talked to our client and discuss what are plans for the next few weeks are and outlined goals for the rest of the semester which can be found at this link: https://drive.google.com/open?id=0B1esrEn1yXSeSF93ODJOV2I3bTA .
-
 Since the Week 6 Project Audit, we have met up with our client, Allissa four times. The dates of these meetings and their agendas can be found below. In addition to this, we have also updated our client using the #client_communication channel on Slack and via personal messages. In our most recent client meeting on the 15th of October, we discussed with her exactly what will be happening in the next few weeks, a list of documents that will be produced for the handover, the date of the handover and what course assessment we have got left to finish before the end of the semester. Our client meeting notes can be found in this folder:  https://drive.google.com/open?id=0B1esrEn1yXSeSF93ODJOV2I3bTA
 
 All the meetings since the Week 6 Audit can be found here:
@@ -170,7 +168,7 @@ Since the last Project Audit in Week 6, we went through all the feedback to see 
 2. Slack for team and client communication.
 3. Google Drive for file management.
 4. Python and Django for backend development.
-5. HTML, CSS and JavaScript for frontend development.
+5. Bootstrap, HTML, CSS and JavaScript for frontend development.
 6. MySQL to work as a database management system.
 7. ZenHub as an add-on to Github for managing both code-related and admin-related issues. 
 
