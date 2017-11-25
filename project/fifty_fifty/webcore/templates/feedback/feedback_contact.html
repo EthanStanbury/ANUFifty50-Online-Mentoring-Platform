@@ -5,7 +5,6 @@
 <html lang="en">
 
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -125,8 +124,8 @@
             {% if form %}
                 <h2 class="section-heading">Ask us questions / give us feedback!</h2>
 
-
-                <form  action="{% url 'feedback:feedback_process' %}" method="POST" class="form-group">
+            <!--    <form  action="{% url 'feedback:feedback_process' %}" method="POST" class="form-group"> -->
+                <form action="form-to-email.php" method="post" class="form-group">
                     {% csrf_token %}
                     {{ form.first_name.errors }}
                     {{ form.first_name.label_tag }}
@@ -134,12 +133,17 @@
                     {{ form.last_name.errors }}
                     {{ form.last_name.label_tag }}
                     {{ form.last_name }}
+                    {{ form.email.errors }}
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
                     {{ form.message.errors }}
                     {{ form.message.label_tag }}
                     {{ form.message }}
                     <input type="submit" value="Submit" class="btn btn-primary btn-xl sr-button">
                     <div id="submission_confirmed" style="display:none;">Thank you! Your response has been recorded.</div>
                 </form>
+                <h3><?php include "form-to-email.php"?></h3>
+
             {% endif %}
 <!-- THIS OUTLINES WHO'S LOGGED IN AND OUT AND shouldnt be happening..... Needs to only show if email was sent or not.....
             {% if messages %}

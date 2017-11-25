@@ -10,6 +10,7 @@ class Feedback_contact(models.Model):
     user = models.ForeignKey(Profile)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255, blank=True)
     message = models.TextField()
 
     def __str__(self):

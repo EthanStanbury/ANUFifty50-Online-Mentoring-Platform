@@ -19,6 +19,8 @@ class FeedbackForm(forms.ModelForm):
             self.fields['first_name'].widget.attrs['readonly'] = str(self.user.first_name) is not ''
             self.fields['last_name'].initial = self.user.last_name
             self.fields['last_name'].widget.attrs['readonly'] = str(self.user.last_name) is not ''
+            self.fields['email'].initial = self.user.email
+            self.fields['email'].widget.attrs['readonly'] = str(self.user.email) is not ''
 
     def subject(self, role):
         message = self.cleaned_data['first_name'] + " " + self.cleaned_data['last_name']
@@ -30,6 +32,7 @@ class FeedbackForm(forms.ModelForm):
         labels = {
             "first_name": "First Name",
             "last_name": "Last Name",
+            "email": "Email",
             "message": "Message"
         }
         widgets = {
@@ -37,5 +40,7 @@ class FeedbackForm(forms.ModelForm):
                 attrs={'placeholder': 'Your First Name ...', 'id': 'fname', 'class': 'form-control'}),
             "last_name": forms.TextInput(
                 attrs={'placeholder': 'Your Last Name ...', 'id': 'lname', 'class': 'form-control'}),
+            "email": forms.TextInput(
+                attrs={'placeholder': 'Your email ...', 'id': 'email', 'class': 'form-control'}),
             "message": forms.Textarea(attrs={'placeholder': 'Message ...', 'id': 'message', 'class': 'form-control'}),
         }
