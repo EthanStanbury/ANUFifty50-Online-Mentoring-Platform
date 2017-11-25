@@ -38,7 +38,7 @@ urlpatterns = [
     url(r'^profile/feedback/feedback_contact.html', views.feedback_process, name='feedback_process'),
     url(r'^profile/settings.html', views.userProfileSettings, name='profileSettings'),
     #url(r'^profile/contact', include('feedback.urls')),
-
+    url(r'^profile/feedback/form-to-email.php', views.feedback_process),
     url(r'^accounts/password/reset', PasswordResetView.as_view(template_name='password_reset.html')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^content/', include('content.urls')),
