@@ -1,8 +1,15 @@
 <?php
 if (isset($_POST['submit'])) {
+
+  require_once "Mail.php";
+
+  $host = "ssl://smtp.zoho.com";
+  $username = "mentoring@fifty50.org.au";
+  $password = "fiddycent";
+  $port = "465";
   $to = 'mentoring@fifty50.org.au';
   $subject = 'Contact Form - New Response';
-  $message = 'First Name: ' . $_POST['first_name'] . 'Last Name: ' . $_POST['last_name'] . "\r\n\r\n";
+  $message = 'First Name: ' . $_POST['fname'] . "\r\n\r\n";
   $message .=  'Email: ' . $_POST['email'] . "\r\n\r\n";
   $message .= 'Message: ' . $_POST['message'];
   $headers = "From: mentoring@fifty50.org.au\r\n";
@@ -11,7 +18,9 @@ if (isset($_POST['submit'])) {
   if ($email){
     $headers .= "\r\nReply-To: $email";
   }
-  $success = mail($to, $subject, $message, $headers, '-fmentoring@fifty50.org.au');
+  $smtp = Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $username, 'password' => $password));
+  $mail = $smtp->send($to, $headers, $subject, $message);
+  //$success = mail($to, $subject, $message, $headers, '-fmentoring@fifty50.org.au');
 }
 ?>
 
