@@ -12,15 +12,15 @@ if (isset($_POST['submit'])) {
   $message = 'First Name: ' . $_POST['fname'] . "\r\n\r\n";
   $message .=  'Email: ' . $_POST['email'] . "\r\n\r\n";
   $message .= 'Message: ' . $_POST['message'];
-  $headers = "From: mentoring@fifty50.org.au\r\n";
+  $headers = "From: $email\r\n";
   $headers .= 'Content-Type: text/plain; charset=utf-8';
   $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
   if ($email){
     $headers .= "\r\nReply-To: $email";
   }
   $smtp = Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $username, 'password' => $password));
-  $mail = $smtp->send($to, $headers, $subject, $message);
-  //$success = mail($to, $subject, $message, $headers, '-fmentoring@fifty50.org.au');
+  //$mail = $smtp->send($to, $headers, $subject, $message);
+  $success = mail($to, $subject, $message, $headers, '-fmentoring@fifty50.org.au');
 }
 ?>
 
@@ -76,7 +76,9 @@ if (isset($_POST['submit'])) {
             background-color: rgba(189, 24, 34, 1);
         }
     </style>
+
   </head>
+
   <body>
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -140,6 +142,8 @@ if (isset($_POST['submit'])) {
         </div>
         <!-- /.container-fluid -->
     </nav>
+
+    <h2 class="section-heading">Form Submssion</h2>
 
     <?php if (isset($success) && $success){ ?>
     <h1> Thank You! </h1>
