@@ -124,6 +124,10 @@ All the meetings since the Week 6 Audit can be found here:
 * Date: 15/10/2017
   * Agenda:  https://drive.google.com/open?id=1_lrmhdVcDTmRmjRpHImO6BOgZz4Vu3kONXTlfwa94Vo 
 
+During the break, we held a training sessions for the Fifty50 Committee where we ran through the functionality of the website and steps on how they can do specific actions like adding or deleting user accounts. For the members that couldn't make it to the meeting, Nikita ran through the slides with them and guided them throught the website, later that week. Documentation for the committee training session can be found below:
+
+* Presentation: <a href="https://docs.google.com/presentation/d/1HMpxLoL-kh8cBy4sX8v_kXhJ3O0KXRBdEdQthz7xAZs/edit#slide=id.p3">Committee Training Presentation</a>
+* Folder: <a href="https://drive.google.com/drive/folders/0Bw7MUyh12MoYR09XRG12eWh3WG8">Committee Training Documents</a>
 
 ### PROFESSIONAL TEAM ATTITUTDE
 As a team we do our best to maintain a professional attitude with our client, tutor and with each other. We have a client meeting at least once a week or once a fortnight in which we update our client on our current progress and our next steps. We keep in contact with our open source contributors at least once every 2-3 days to make sure that we know what they are working on and if they needed any help. All team members have arrived to meetings on time or have given adequate notice if they are unable to attend, in which case, we sometimes call them via Skype. We decide the time for our team meetings via a Doodle Poll or Slack. 
