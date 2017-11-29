@@ -4,3 +4,4 @@ django-crispy-forms==1.6.1
 django-allauth==0.32.0
 psycopg2==2.7.3
 Pillow
+mysqlclient==1.3.6
