@@ -1,0 +1,82 @@
+{{% load staticfiles %}
+{% include 'contact_form/contact_form_navbar.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href={% static "MenteePage/img/logo.png" %}>
+
+        <title>Fifty50 Mentoring Program</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href={% static "MenteePage/vendor/bootstrap/css/bootstrap.min.css" %} rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href={% static "MenteePage/vendor/font-awesome/css/font-awesome.min.css" %} rel="stylesheet" type="text/css">
+
+        <!-- Plugin CSS -->
+        <link href={% static "MenteePage/vendor/magnific-popup/magnific-popup.css" %} rel="stylesheet">
+
+        <!-- Theme CSS -->
+        <link href={% static "MenteePage/css/creative.min.css" %} rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+        <![endif]-->
+
+
+        <style type="text/css">
+            .section-heading {
+                margin-top: 30px;
+            }
+
+            .form {
+                margin-bottom: 60px;
+            }
+
+            input[type=submit] {
+                color: white;
+                background-color: rgba(246, 139, 35, 1);
+                border-radius: 300px;
+                padding: 15px 30px;
+            }
+
+            input[type=submit]:hover {
+                background-color: rgba(189, 24, 34, 1);
+            }
+
+            @media screen and (min-width: 768px) and (max-width: 1034px) {
+                body {
+                    padding-top: 100px;
+                }
+            }
+            @media screen and (min-width: 1035px) and (max-width: 1233px) {
+                body {
+                    padding-top: 50px;
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+      <div class="container form" style='padding-top:5%'>
+        <h2 class="section-heading">Your message was sent! An admin will be in touch soon!</h2>
+      </div>
+
+      {% include 'profile_footer.html' %}
+
+    </body>
+  </html>
+  {% endblock %}
