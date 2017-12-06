@@ -77,12 +77,13 @@
                                   <h2>{{user.first_name}}&nbsp;{{user.last_name}}</h2>
                                 </div>
                                 <hr>
-                                <ul class="container details">
-                                    <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+91 90000 00000</p></li>
-                                    <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>somerandom@email.com</p></li>
-                                    <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Hyderabad</p></li>
-                                    <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="#">www.example.com</p></a>
-                                </ul>
+
+                                  <ul class="container details" style="list-style: none; text-align: center;">
+                                      <li><p><span style="width:50px;"></span> Email Id: {{ user.email }}</p></li>
+                                      <li><p><span style="width:50px;"></span> Degree Programme: {{ user.profile.degree_programme }}</p></li>
+                                      <li><p><span style="width:50px;"></span> Year of Study: {{ user.profile.study_year }} </p>
+                                  </ul>
+
                     </div>
                   </div>
       						<div class="col-sm-6" style="padding-left:20px; padding-right:20px">
@@ -116,10 +117,10 @@
                                   </div>
                               </div>
                               <h4>Would you like to provide any more feedback?</h4>
-                              <input type="text" style="font-size:12px;" placeholder="e.g. I really enjoyed..... / The program can be improved by....."/>
+                              <input type="text" style="font-size:12px;" placeholder="e.g. I really enjoyed ... / The program can be improved by ..."/>
                           </div>
                           <div class="row" style="margin-bottom: 100px;">
-                              <a href="mailto:nikitabhatia.17@gmail.com" class="btn btn-primary btn-xl sr-button">Submit</a>
+                              <a href="mailto:mentoring@fifty50.org.au" class="btn btn-primary btn-xl sr-button">Submit</a>
                           </div>
                     </div>
                   </div>

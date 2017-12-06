@@ -85,7 +85,7 @@
                   {% if request.user.profile.role == 'Mentor' %}
                     <p class="text-muted">Preferred mentee gender<span style="color:black">{{ user.profile.mentor_gender }}</span>. Change to:</p>
                     <input type="text" name="pref_mentee_gender">
-                    <p class="text-muted">Max number of mentees is <span style="color:black">{{ user.profile.mentee_number }}</span>. Change to:</p>
+                    <p class="text-muted">Maximum number of mentees is <span style="color:black">{{ user.profile.mentee_number }}</span>. Change to:</p>
                     <input type="text" name="num_mentees">
                   {% else %}
                     <p class="text-muted">Preferred mentor gender is <span style="color:black">{{ user.profile.mentor_gender }}</span>. Change to:</p>
