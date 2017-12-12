@@ -192,9 +192,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # ------------------------- SMTP Settings for Sending Emails --------------------------
+# These are the 3 options for testing out whether the contact form sends an email or not
+# Comment the one out that is being used to test with
+# These are only to be used in development
+# Remove these in production
+
 # This command is to be used when testing whether emails print on a console or not
 # Remove it in production
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # This is to be used when testing emails with a smtp server
 # Remove it in production
