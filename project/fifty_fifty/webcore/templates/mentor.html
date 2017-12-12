@@ -70,13 +70,13 @@
                        </div>
                        <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
                            <div class="container" style="border-bottom:1px solid black">
-                                                           <h3>
+                               <h3>
                                   Your  {% if request.user.profile.role == 'Mentor' %}
                                             Mentee's id is {{ request.user.profile.paired_with }}
                                         {% else %}
                                             Mentor's id is {{ request.user.profile.paired_with }}
-                                        {% endif %}
-                              </h3>
+                                         {% endif %}
+                               </h3>
                                <hr>
                                <h2>{{ user.profile.first_name }}&nbsp;{{ user.profile.last_name }}</h2>
                            </div>

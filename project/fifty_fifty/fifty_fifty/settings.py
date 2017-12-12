@@ -191,32 +191,27 @@ ACCOUNT_LOGOUT_ON_GET = True
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-# DONT DELETE STMP SETTINGS
-EMAIL_USE_SSL = True
+# ------------------------- SMTP Settings for Sending Emails --------------------------
+# This command is to be used when testing whether emails print on a console or not
+# Remove it in production
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# This is to be used when testing emails with a smtp server
+# Remove it in production
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# The next two lines are used to test sending emails with the emails being stored in a temp folder
+# This folder is created inside project/fifty_fifty
+# Remove this in production
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = 'tmp/email-messages/'
+
+# DO NOT DELETE SMTP SETTINGS BELOW THIS LINE
+DEFAULT_FROM_EMAIL = 'mentoring@fifty50.org.au'
 EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_USE_SSL = True
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'mentoring@fifty50.org.au'
 EMAIL_HOST_PASSWORD = 'fiddycent'
-#EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'mentoring@fifty50.org.au'
-SERVER_MAIL = 'mentoring@fifty50.org.au'
-#REMOVE THIS EMAIL_BACKEND FOR PRODUCTION
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-ADMINS = [('Nikita','nikitabhatia.17@gmail.com'),('MentoringTeam','mentoring@fifty50.org.au')]
-
-
-'''
-# Install django-email-bandit==1.3 for this
-# Not to be used in production, only in development
-EMAIL_BACKEND = 'bandit.backends.smtp.HijackSMTPBackend'
-BANDIT_EMAIL = 'mentoring@fifty50.org.au'
-'''
-
-'''
-# This is a method to store emails in a temp folder
-# This folder is created inside project/fifty_fifty
-# Not to be used in production, only in development
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = 'tmp/email-messages/'
-'''
+ADMINS = [('MentoringTeam','mentoring@fifty50.org.au')]
+MANAGERS = ADMINS

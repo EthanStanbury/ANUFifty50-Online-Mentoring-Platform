@@ -83,7 +83,7 @@
                   <p class="text-muted">Preferred subject area is <span style="color:black">{{ user.profile.degree_major }}</span>. Change to:</p>
                   <input type="text" name="subject">
                   {% if request.user.profile.role == 'Mentor' %}
-                    <p class="text-muted">Preferred mentee gender<span style="color:black">{{ user.profile.mentor_gender }}</span>. Change to:</p>
+                    <p class="text-muted">Preferred mentee gender is <span style="color:black">{{ user.profile.mentor_gender }}</span>. Change to:</p>
                     <input type="text" name="pref_mentee_gender">
                     <p class="text-muted">Maximum number of mentees is <span style="color:black">{{ user.profile.mentee_number }}</span>. Change to:</p>
                     <input type="text" name="num_mentees">
@@ -101,7 +101,7 @@
           </div>
       </section>
       <section class="no-padding" style="padding:50px;"></section>
-      
+
 {% include 'profile_footer.html' %}
 
     <!-- jQuery -->
