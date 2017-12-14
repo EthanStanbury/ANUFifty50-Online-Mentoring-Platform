@@ -208,8 +208,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # The next two lines are used to test sending emails with the emails being stored in a temp folder
 # This folder is created inside project/fifty_fifty
 # Remove this in production
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = 'tmp/email-messages/'
+#EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+#EMAIL_FILE_PATH = 'tmp/email-messages/'
 
 # DO NOT DELETE SMTP SETTINGS BELOW THIS LINE
 DEFAULT_FROM_EMAIL = 'mentoring@fifty50.org.au'
