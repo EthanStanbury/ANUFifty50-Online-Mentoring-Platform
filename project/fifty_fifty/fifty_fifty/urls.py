@@ -19,6 +19,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from webcore import views
 from allauth.account.views import PasswordResetView
+from django.views.generic.base import TemplateView
 
 admin.autodiscover()
 
@@ -36,14 +37,21 @@ urlpatterns = [
     url(r'^profile/profile.html', views.userProfileProfile, name='profileProfile'),
     url(r'^profile/menteelogin.html', views.userProfile, name='profile'),
     url(r'^profile/feedback/feedback_contact.html', views.feedback_process, name='feedback_process'),
+    url(r'^profile/contact_form/contact_form.html', include('contact_form.urls')),
+    #url(r'^profile/contact_form/sent/', include('contact_form.urls')),
     url(r'^profile/settings.html', views.userProfileSettings, name='profileSettings'),
     #url(r'^profile/contact', include('feedback.urls')),
-
+    url(r'^profile/feedback/form-to-email.php', views.feedback_process),
     url(r'^accounts/password/reset', PasswordResetView.as_view(template_name='password_reset.html')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^content/', include('content.urls')),
     url(r'^feedback/', include('feedback.urls')),
     url(r'', include('blog.urls')),
+    url(r'^contact/sent/$',
+        TemplateView.as_view(
+            template_name='contact_form/contact_form_sent.html'
+        ),
+        name='contact_form_sent'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

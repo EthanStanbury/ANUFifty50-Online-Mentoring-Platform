@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'pair',
     'feedback',
     'blog',
+    'contact_form',
+    'bandit',
 ]
 
 MIDDLEWARE = [
@@ -97,6 +99,19 @@ WSGI_APPLICATION = 'fifty_fifty.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+# Settings for MySQL
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'myproject',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+'''
 
 DATABASES = {
     'default': {
@@ -104,7 +119,6 @@ DATABASES = {
         'NAME': 'mydatabase',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -177,12 +191,32 @@ ACCOUNT_LOGOUT_ON_GET = True
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-##DONT DELETE STMP SETTINGS
-EMAIL_USE_SSL = True
+# ------------------------- SMTP Settings for Sending Emails --------------------------
+# These are the 3 options for testing out whether the contact form sends an email or not
+# Comment the one out that is being used to test with
+# These are only to be used in development
+# Remove these in production
+
+# This command is to be used when testing whether emails print on a console or not
+# Remove it in production
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# This is to be used when testing emails with a smtp server
+# Remove it in production
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# The next two lines are used to test sending emails with the emails being stored in a temp folder
+# This folder is created inside project/fifty_fifty
+# Remove this in production
+#EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+#EMAIL_FILE_PATH = 'tmp/email-messages/'
+
+# DO NOT DELETE SMTP SETTINGS BELOW THIS LINE
+DEFAULT_FROM_EMAIL = 'mentoring@fifty50.org.au'
 EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_USE_SSL = True
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'mentoring@fifty50.org.au'
 EMAIL_HOST_PASSWORD = 'fiddycent'
-#EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'mentoring@fifty50.org.au'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+ADMINS = [('MentoringTeam','mentoring@fifty50.org.au')]
+MANAGERS = ADMINS

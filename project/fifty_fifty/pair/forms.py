@@ -16,5 +16,5 @@ class PairForm(forms.ModelForm):
         check = Pair.objects.filter(mentor=cleaned_data['mentor'], mentee=cleaned_data['mentee'])
         if check:
             return self.add_error('mentor', 'Mentor and Mentee combination already exists.')
-
-    
+        if check:
+            return self.add_error('mentor', 'Mentor limit already reached')

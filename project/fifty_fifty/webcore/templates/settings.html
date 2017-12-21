@@ -1,5 +1,5 @@
 {% load staticfiles %}
-{% include 'Profile_NavBar.html' %}
+{% include 'profile_navbar.html' %}
 {% load crispy_forms_tags %}
 
 
@@ -83,9 +83,9 @@
                   <p class="text-muted">Preferred subject area is <span style="color:black">{{ user.profile.degree_major }}</span>. Change to:</p>
                   <input type="text" name="subject">
                   {% if request.user.profile.role == 'Mentor' %}
-                    <p class="text-muted">Preferred mentee gender<span style="color:black">{{ user.profile.mentor_gender }}</span>. Change to:</p>
+                    <p class="text-muted">Preferred mentee gender is <span style="color:black">{{ user.profile.mentor_gender }}</span>. Change to:</p>
                     <input type="text" name="pref_mentee_gender">
-                    <p class="text-muted">Max number of mentees is <span style="color:black">{{ user.profile.mentee_number }}</span>. Change to:</p>
+                    <p class="text-muted">Maximum number of mentees is <span style="color:black">{{ user.profile.mentee_number }}</span>. Change to:</p>
                     <input type="text" name="num_mentees">
                   {% else %}
                     <p class="text-muted">Preferred mentor gender is <span style="color:black">{{ user.profile.mentor_gender }}</span>. Change to:</p>
@@ -102,16 +102,10 @@
       </section>
       <section class="no-padding" style="padding:50px;"></section>
 
-
-</section>
-
 {% include 'profile_footer.html' %}
 
     <!-- jQuery -->
     <script src={% static "MenteePage/vendor/jquery/jquery.min.js" %}></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src={% static "MenteePage/vendor/bootstrap/js/bootstrap.min.js" %}></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
@@ -124,6 +118,9 @@
     <script src={% static "MenteePage/js/jquery-2.1.1.js" %}></script>
     <script src={% static "MenteePage/js/jquery.mobile.custom.min.js" %}></script>
     <script src={% static "MenteePage/js/main.js" %}></script> <!-- Resource jQuery -->
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src={% static "MenteePage/vendor/bootstrap/js/bootstrap.min.js" %}></script>
 
 </body>
 </html>
