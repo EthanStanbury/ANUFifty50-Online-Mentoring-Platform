@@ -219,5 +219,7 @@ EMAIL_USE_SSL = True
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'mentoring@fifty50.org.au'
 EMAIL_HOST_PASSWORD = 'fiddycent'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 ADMINS = [('MentoringTeam','mentoring@fifty50.org.au')]
 MANAGERS = ADMINS
