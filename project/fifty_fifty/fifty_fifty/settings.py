@@ -212,9 +212,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 #EMAIL_FILE_PATH = 'tmp/email-messages/'
 
 # DO NOT DELETE SMTP SETTINGS BELOW THIS LINE
-#DEFAULT_FROM_EMAIL = 'mentoring@fifty50.org.au'
-EMAIL_HOST = "smtp.zoho.com"
-EMAIL_HOST_USER = "mentoring@fifty50.org.au"
+DEFAULT_FROM_EMAIL = 'mentoring@fifty50.org.au'
+SERVER_EMAIL = 'mentoring@fifty50.org.au'
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_USE_SSL = True
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'mentoring@fifty50.org.au'
 EMAIL_HOST_PASSWORD = 'fiddycent'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
