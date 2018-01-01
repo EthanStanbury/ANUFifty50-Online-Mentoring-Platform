@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'blog',
     'contact_form',
     'bandit',
+    'feedback_form_responses',
 ]
 
 MIDDLEWARE = [
