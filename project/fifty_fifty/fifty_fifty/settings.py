@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'feedback',
     'blog',
     'contact_form',
-    'bandit',
     'feedback_form_responses',
 ]
 
@@ -200,7 +199,7 @@ MEDIA_URL = '/media/'
 
 # This command is to be used when testing whether emails print on a console or not
 # Remove it in production
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # This is to be used when testing emails with a smtp server
 # Remove it in production
