@@ -199,11 +199,11 @@ MEDIA_URL = '/media/'
 
 # This command is to be used when testing whether emails print on a console or not
 # Remove it in production
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # This is to be used when testing emails with a smtp server
 # Remove it in production
-#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # The next two lines are used to test sending emails with the emails being stored in a temp folder
 # This folder is created inside project/fifty_fifty
@@ -212,12 +212,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 #EMAIL_FILE_PATH = 'tmp/email-messages/'
 
 # DO NOT DELETE SMTP SETTINGS BELOW THIS LINE
-DEFAULT_FROM_EMAIL = 'mentoring@fifty50.org.au'
-SERVER_EMAIL = 'mentoring@fifty50.org.au'
-EMAIL_HOST = 'smtp.zoho.com'
+DEFAULT_FROM_EMAIL = 'fifty50mentoring@gmail.com'
+SERVER_EMAIL = 'fifty50mentoring@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_SSL = True
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'mentoring@fifty50.org.au'
-EMAIL_HOST_PASSWORD = 'fiddycent'
-ADMINS = [('MentoringTeam','mentoring@fifty50.org.au')]
+EMAIL_HOST_USER = 'fifty50mentoring@gmail.com'
+EMAIL_HOST_PASSWORD = 'fiddycent@123'
+ADMINS = [('MentoringTeam','fifty50mentoring@gmail.com')]
 MANAGERS = ADMINS
