@@ -218,6 +218,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_SSL = True
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'fifty50mentoring@gmail.com'
-EMAIL_HOST_PASSWORD = 'fiddycent@123'
+EMAIL_HOST_PASSWORD = '(-gZ4z=kXVj$P9U-'
 ADMINS = [('MentoringTeam','fifty50mentoring@gmail.com')]
 MANAGERS = ADMINS
